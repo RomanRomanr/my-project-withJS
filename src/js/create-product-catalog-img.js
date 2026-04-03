@@ -16,6 +16,15 @@ export async function loadAllCategories() {
   } catch (error) {}
 }
 
+// Create markup by category
+async function loadFurnitureByCaregory(categoryID, page) {
+  try {
+    const responce = await getFurnitureByCategory(categoryID, page);
+    const markup = createCatalogueFurniture(responce.furnitures);
+    ulCataloge.innerHTML = markup;
+  } catch (error) {}
+}
+
 //Pagination for all categories
 btnLoadMore.addEventListener('click', loadMore);
 async function loadMore() {
@@ -30,14 +39,5 @@ async function loadMore() {
       const markup = createCatalogueFurniture(responce.furnitures);
       ulCataloge.insertAdjacentHTML('beforeend', markup);
     }
-  } catch (error) {}
-}
-
-// Create markup by category
-async function loadFurnitureByCaregory() {
-  try {
-    const responce = await getAllFurniture(categoryID, page);
-    const markup = createCatalogueFurniture(responce.furnitures);
-    ulCataloge.innerHTML = markup;
   } catch (error) {}
 }
