@@ -1,11 +1,5 @@
 import axios from 'axios';
 
-import { createCatalogueFurniture } from './product-catalog-render';
-
-const ulCataloge = document.querySelector('.furniture-catalog-list');
-
-let page = 1;
-
 // Fetch all catalog from API
 export async function getAllFurniture(page) {
   const apiResponse = await axios.get(
@@ -20,19 +14,12 @@ export async function getAllFurniture(page) {
   return apiResponse.data;
 }
 
-export async function handleLoadCategory() {
-  const responce = await getAllFurniture(page);
-  const markup = createCatalogueFurniture(responce.furnitures);
-  ulCataloge.innerHTML = markup;
-}
-
 // Fetch catalog by category from API
 async function getFurnitureByCategory(categoryID, page) {
   const response = await axios(
     'https://furniture-store-v2.b.goit.study/api/furnitures',
     {
       params: {
-        category: category,
         category: categoryID,
         page: page,
         limit: 8,
