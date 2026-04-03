@@ -15,11 +15,6 @@
     // is-open це клас який буде додаватися/забиратися на бекдроп при натисканні на кнопки
     refs.modal.classList.toggle('is-open');
     document.body.classList.add('menu-open');
-    if (refs.modal.classList.contains('is-open')) {
-      refs.openModalBtn.style.display = 'none';
-    } else {
-      refs.openModalBtn.style.display = 'flex';
-    }
   }
 
   document.addEventListener('keydown', handleKeyDown);
@@ -43,7 +38,6 @@
 
   function closeMenu() {
     refs.modal.classList.remove('is-open');
-    refs.openModalBtn.style.display = 'flex';
     document.body.classList.remove('menu-open');
   }
 })();
