@@ -1,2 +1,2 @@
-import { handleLoadCategory } from './js/api-product-catalog.js';
-document.addEventListener('DOMContentLoaded', handleLoadCategory);
+import { loadAllCategories } from './js/create-product-catalog-img';
+document.addEventListener('DOMContentLoaded', loadAllCategories);
