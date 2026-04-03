@@ -37,7 +37,7 @@ async function getFurnitureByCategory(categoryID, page) {
     'https://furniture-store-v2.b.goit.study/api/furnitures',
     {
       params: {
-        category: category,
+        category: categoryID,
         page: page,
         limit: 8,
       },
