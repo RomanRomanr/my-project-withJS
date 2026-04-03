@@ -7,7 +7,7 @@ const ulCataloge = document.querySelector('.furniture-catalog-list');
 let page = 1;
 
 // Fetch all catalog from API
-async function getAllFurniture(page) {
+export async function getAllFurniture(page) {
   const apiResponse = await axios.get(
     'https://furniture-store-v2.b.goit.study/api/furnitures',
     {
@@ -27,7 +27,6 @@ export async function handleLoadCategory() {
 }
 
 // Fetch catalog by category from API
-
 async function getFurnitureByCategory(categoryID, page) {
   const response = await axios(
     'https://furniture-store-v2.b.goit.study/api/furnitures',
