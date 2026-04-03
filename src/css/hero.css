@@ -1,0 +1,80 @@
+.hero {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('/img/hero/bg-mob.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 320px;
+  min-height: 348px;
+  margin: auto;
+}
+@media screen and (min-resolution: 192dpi) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url('/img/hero/bg@2x-mob.jpg');
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url('/img/hero/bg-tab.jpg');
+    max-width: 768px;
+    min-height: 325px;
+  }
+}
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url('/img/hero/bg@2-tab.jpg');
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(217, 217, 217, 0.5),
+        rgba(217, 217, 217, 0.5)
+      ),
+      url('/img/hero/bg-desk.jpg');
+    max-width: 1440px;
+    min-height: 462px;
+  }
+}
+@media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(217, 217, 217, 0.5),
+        rgba(217, 217, 217, 0.5)
+      ),
+      url('/img/hero/bg@2xdesk.jpg');
+  }
+}
+.hero-container{
+    padding-top: 92px;
+    padding-bottom: 92px;
+    padding-left: 63px;
+    padding-right: 65px;
+}
+.hero-title{
+    font-size: 56px;
+    color: #fff;
+    margin-right: 752px;
+    
+}
