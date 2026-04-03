@@ -14,9 +14,14 @@
 @import url('./header.css');
 @import url('./hero.css');
 @import url('./product.css');
+@import url('./product-catalog.css');
 @import url('./about-us.css');
 @import url('./product-popular.css');
 @import url('./FAQ.css');
 @import url('./testimonial.css');
 @import url('./footer.css');
 @import url('./product-modal.css');
+.p{
+  font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
