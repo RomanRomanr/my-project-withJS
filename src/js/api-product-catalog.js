@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import iziToast from 'izitoast';
 import { createCatalogueFurniture } from './product-catalog-render';
 
 const ulCataloge = document.querySelector('.furniture-catalog-list');
@@ -21,9 +21,13 @@ async function getAllFurniture(page) {
 }
 
 export async function handleLoadCategory() {
-  const responce = await getAllFurniture(page);
-  const markup = createCatalogueFurniture(responce.furnitures);
-  ulCataloge.innerHTML = markup;
+  try {
+    const responce = await getAllFurniture(page);
+    const markup = createCatalogueFurniture(responce.furnitures);
+    ulCataloge.innerHTML = markup;
+  } catch (error) {
+    iziToast.show();
+  }
 }
 
 // Fetch catalog by category from API
