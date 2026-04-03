@@ -17,7 +17,7 @@ export async function loadAllCategories() {
 }
 
 // Create markup by category
-async function loadFurnitureByCaregory(categoryID, page) {
+export async function loadFurnitureByCaregory(categoryID, page) {
   try {
     const responce = await getFurnitureByCategory(categoryID, page);
     const markup = createCatalogueFurniture(responce.furnitures);
@@ -35,7 +35,7 @@ async function loadMore() {
       const markup = createCatalogueFurniture(responce.furnitures);
       ulCataloge.insertAdjacentHTML('beforeend', markup);
     } else {
-      const responce = await getAllFurniture(categoryID, page);
+      const responce = await getFurnitureByCategory(categoryID, page);
       const markup = createCatalogueFurniture(responce.furnitures);
       ulCataloge.insertAdjacentHTML('beforeend', markup);
     }
