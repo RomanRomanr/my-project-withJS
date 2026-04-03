@@ -1,6 +1,8 @@
 .furniture-catalog-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 24px;
 }
 @media screen and (min-width: 768px) {
@@ -9,11 +11,17 @@
     flex-wrap: wrap;
   }
 }
+@media screen and (min-width: 1440px) {
+  .furniture-catalog-list {
+    row-gap: 40px;
+  }
+}
 
 .furniture-catalog-img {
   max-width: 335px;
   min-height: 280px;
   border-radius: 8px;
+  margin-bottom: 16px;
 }
 @media screen and (min-width: 768px) {
   .furniture-catalog-img {
@@ -28,10 +36,17 @@
     min-height: 260px;
   }
 }
+.furniture-catalog-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
 
 .color-list {
   display: flex;
   gap: 16px;
+  margin-bottom: 8px;
 }
 
 .color-items {
@@ -39,4 +54,30 @@
   width: 24px;
   border-radius: 50%;
   border: 1px solid #5b5454;
+}
+.furniture-catalog-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 121px;
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.5);
+  border-radius: 100px;
+  border: none;
+  text-transform: capitalize;
+  line-height: 1.6;
+  font-weight: 500;
+}
+.furniture-catalog-price {
+  margin-bottom: 16px;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+.btn-load-more {
+  background-color: #6b0609;
+  padding: 10px 120px;
+  margin-bottom: 48px;
+  color: #fff;
+  display: block;
+  margin: 42px auto;
+  border-radius: 100px;
 }
