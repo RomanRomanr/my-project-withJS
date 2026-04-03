@@ -37,10 +37,12 @@
   }
 }
 .furniture-catalog-title {
+  margin-bottom: 8px;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.6;
-  margin-bottom: 8px;
+  font-family: 'Raleway', sans-serif;
+  color: #080c09;
 }
 
 .color-list {
@@ -53,31 +55,58 @@
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  border: 1px solid #5b5454;
+  border: 1px solid rgba(8, 12, 9, 0.1);
 }
 .furniture-catalog-btn {
   display: block;
   margin: 0 auto;
   padding: 10px 121px;
-  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.5);
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.05);
+  background-color: rgba(8, 12, 9, 0.05);
+  color: #080c09;
   border-radius: 100px;
   border: none;
+  font-family: 'Raleway', sans-serif;
   text-transform: capitalize;
   line-height: 1.6;
   font-weight: 500;
+
+  &:hover,
+  &:active {
+    opacity: 0.5;
+  }
 }
 .furniture-catalog-price {
   margin-bottom: 16px;
   font-size: 20px;
   line-height: 1.6;
   font-weight: 600;
+  color: #080c09;
+  font-family: 'Raleway', sans-serif;
 }
 .btn-load-more {
-  background-color: #6b0609;
-  padding: 10px 120px;
-  margin-bottom: 48px;
-  color: #fff;
   display: block;
-  margin: 42px auto;
+  margin: 42px auto 48px;
+  padding: 10px 120px;
   border-radius: 100px;
+  background-color: #6b0609;
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  font-family: 'Raleway', sans-serif;
+  border: none;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    opacity: 0.5;
+  }
 }

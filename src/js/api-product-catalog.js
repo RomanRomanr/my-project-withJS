@@ -28,7 +28,7 @@ export async function handleLoadCategory() {
 
 // Fetch catalog by category from API
 
-async function getFurnitureByCategory(category, page) {
+async function getFurnitureByCategory(categoryID, page) {
   const response = await axios(
     'https://furniture-store-v2.b.goit.study/api/furnitures',
     {
