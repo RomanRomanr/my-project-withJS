@@ -31,7 +31,8 @@ export function createCategories(categories) {
 // import "izitoast/dist/css/iziToast.min.css";
 
 // import { getListCategories, createCategories } from "./js/product-filter.js";
-// // import { getFurnitureByCategory, handleLoadCategory } from "./js/???.js";
+// // import { getFurnitureByCategory } from "./js/api-product-catalog.js";
+// // import { loadAllCategories } from "./js/create-product-catalog-img.js";
 
 
 // document.addEventListener("DOMContentLoaded", async event => { 
@@ -45,7 +46,7 @@ export function createCategories(categories) {
 //   ...categories
 // ];
 //         createCategories(updatedCategories);
-//         // await handleLoadCategory();
+//         // await loadAllCategories();
 //  const firstItem = document.querySelector(".list-categories-item");
 // if (firstItem) {
 //   firstItem.classList.add("active-item-category");
@@ -78,7 +79,7 @@ export function createCategories(categories) {
 //   const categoryId = categoryItem.dataset.categoryId;
 //     try {
 //         if (categoryId === "all") {
-//             // await handleLoadCategory();
+//             // await loadAllCategories();
 //             console.log("Показати всі товари");
 //         } else {
 //             // await getFurnitureByCategory(categoryId, page = 1);
