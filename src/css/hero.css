@@ -1,0 +1,224 @@
+.hero {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url('/img/hero/bg-mob.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  max-width: 100%;
+  min-height: 348px;
+  margin: auto;
+}
+@media screen and (min-resolution: 192dpi) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url('/img/hero/bg@2x-mob.jpg');
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url('/img/hero/bg-tab.jpg');
+    min-height: 325px;
+  }
+}
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url('/img/hero/bg@2x-tab.jpg');
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('/img/hero/bg-desk.jpg');
+    min-height: 462px;
+  }
+}
+@media screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+  .hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url('/img/hero/bg@2xdesk.jpg');
+  }
+}
+@media screen and (min-width: 1440px) {
+.hero-container{
+    padding-top: 92px;
+    padding-bottom: 92px;
+    padding-left: 63px;
+    padding-right: 65px;
+}
+.hero-title{
+    font-size: 56px;
+    color: #fff;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.01em; 
+}
+.text-hero{
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+.container-column{
+    width: 560px;
+height: 323px;
+max-width: 560px;
+margin-right: 0;
+}
+.btn-hero {
+    width: 209px;       
+    height: 46px;
+}
+}
+@media screen and (max-width: 767px) {
+
+ 
+.hero-container {
+  padding: 136px 20px;
+}
+
+.container-column {
+ 
+height: 343px;
+max-width: 1318px;
+}
+
+.hero-title {
+    color: #fff;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.text-hero {
+    color: #fff;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.btn-hero {
+  background: #6b0609;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  width: 335px;        
+  height: 46px;       
+  padding: 10px 24px;
+  margin: 0 auto;
+  display: block;     
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-hero:hover,
+.btn-hero:focus {
+  background: #8a0a0d; 
+}
+}
+@media screen and (min-width: 768px) and (max-width: 1439px)  {
+  .hero-container {
+    padding: 80px 32px;
+  }
+
+  .container-column {
+    width: 560px;
+height: 237px;
+max-width: 560px;
+  }
+
+  .hero-title {
+    color: #fff;
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+
+  .text-hero {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+
+  .btn-hero {
+    width: 180px;
+  }
+  .btn-hero {
+    width: 209px;      
+    height: 46px;
+  }
+}
+.btn-hero {
+  background: #6b0609;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: auto;         
+  height: 46px; 
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+}
+
+.btn-hero:hover,
+.btn-hero:focus {
+  background: #8a0a0d;
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: none;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+    .show{
+        display: block;
+    }
