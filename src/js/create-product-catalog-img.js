@@ -1,3 +1,5 @@
+
+
 import { createCatalogueFurniture } from './product-catalog-render';
 import { getAllFurniture } from './api-product-catalog';
 
