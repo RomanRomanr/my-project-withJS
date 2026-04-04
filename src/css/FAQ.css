@@ -5,7 +5,7 @@
 .section-title{
     font-weight: 700;
     font-size: 36px;
-    line-height: 120%;
+    line-height: 1.2;
     letter-spacing: 0.01em;
     text-align: center;
     margin: 0;
@@ -17,14 +17,15 @@
     flex-direction: column;
 }
 
-.faq-title{
+.faq-list .faq-item .faq-title{
     margin: 0;
     position: relative;
-    height: 98px;
+    padding-bottom: 20px ;
+    padding-top: 20px ;
 }
 
 
-.faq-toggle{
+.faq-list .faq-item .faq-title .faq-toggle{
     width: 100%;
     border: none;
     background: transparent;
@@ -34,7 +35,7 @@
     font: inherit;
     font-weight: 700;
     font-size: 18px;
-    line-height: 160%;
+    line-height: 1.6;
     cursor: pointer;
     padding-top: 20px;
 }
@@ -51,35 +52,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    line-height: 1;
     box-sizing: border-box;
+}
+
+
+
+.faq-list .faq-item .ac-panel .faq-paragraph{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 24px;
 }
 
 .faq-icon-last{
     top: 20px;
 }
 
-
-
-.faq-paragraph{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 160%;
-    margin: 0;
-    padding-bottom: 24px;
-    display: none;
+.ac-trigger::after {
+  display: none ;
 }
 
-
 @media only screen and (min-width: 768px) {
-    .faq-title{
-        height: 72px;
+    .faq-list .faq-item .faq-title{
+        padding-bottom: 21.5px;
+        padding-top: 21.5px;
     }
-
     .faq-icon{
         top: 20px;
     }
+    
 }
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
