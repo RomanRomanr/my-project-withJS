@@ -8,14 +8,16 @@
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  padding: 0 20px 32px 20px;
+  padding-bottom: 32px;
 }
 
 /* Logo */
 .footer-logo {
   display: inline-flex;
-  color: #ffffff;
   transition: opacity 0.2s ease;
+  width: 228px;
+  height: 97px;
+  align-items: center;
 }
 
 .footer-logo:hover {
@@ -82,10 +84,6 @@
 
 @media only screen and (min-width: 768px) {
 
-  .footer-inner {
-     padding: 0 32px 32px 32px;
-  }
-
   .footer-nav-list {
      flex-direction: row;
      gap: 32px;
@@ -96,18 +94,15 @@
     .footer-inner {
         flex-direction: row;
         gap: 80px;
-        padding: 0 64px;
         justify-content: space-between;
-    }
-
-    .footer-nav-list {
-        padding: 0;
+        align-items: center;
+        padding-bottom: 0;
     }
 
     .footer-logo { order: 1; } .footer-copyright { order: 2; } .footer-nav { order: 3; } .footer-socials { order: 4; }
 
     .footer-copyright {
-    font-size: 0; /* ховає оригінальний текст */
+    font-size: 0;
   }
 
   .footer-copyright::before {
