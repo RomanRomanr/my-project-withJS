@@ -31,7 +31,6 @@
 }
 
 .footer-nav-link {
-  font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
@@ -58,6 +57,10 @@
   transition: opacity 0.2s ease;
 }
 
+.footer-socials-item {
+  font-size: 0;
+}
+
 .footer-socials-link:hover {
   opacity: 0.7;
 }
@@ -68,7 +71,6 @@
 
 /* Copyright */
 .footer-copyright {
-  font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 160%;
@@ -79,10 +81,14 @@
 /* media screen */
 
 @media only screen and (min-width: 768px) {
+
+  .footer-inner {
+     padding: 0 32px 32px 32px;
+  }
+
   .footer-nav-list {
      flex-direction: row;
      gap: 32px;
-     padding: 0 32px 32px 32px;
   }
 }
 
@@ -97,4 +103,15 @@
     .footer-nav-list {
         padding: 0;
     }
+
+    .footer-logo { order: 1; } .footer-copyright { order: 2; } .footer-nav { order: 3; } .footer-socials { order: 4; }
+
+    .footer-copyright {
+    font-size: 0; /* ховає оригінальний текст */
+  }
+
+  .footer-copyright::before {
+    content: "© 2025 Меблерія. Всі права захищені.";
+    font-size: 14px;
+  }
 }
