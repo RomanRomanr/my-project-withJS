@@ -34,7 +34,7 @@ export async function loadFurnitureByCaregory(categoryID, page) {
 //Pagination  categories
 btnLoadMore.addEventListener('click', loadMore); //треба додати в main ? функцію loadMore експортувати
 
-async function loadMore() {
+export async function loadMore() {
   page += 1;
   try {
     if (!categoryID) {
@@ -49,7 +49,7 @@ async function loadMore() {
   } catch (error) {}
 }
 // Check last page
-function checkBtnStatus() {
+export function checkBtnStatus() {
   if (page >= totalPage) {
     btnLoadMore.disabled = true;
   } else {
