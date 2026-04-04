@@ -93,6 +93,18 @@
     opacity: 0.5;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .furniture-catalog-btn {
+    padding: 10px 124px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .furniture-catalog-btn {
+      padding: 10px 109px;
+    }
+  }
+}
 .furniture-catalog-price {
   margin-bottom: 16px;
   font-size: 20px;
