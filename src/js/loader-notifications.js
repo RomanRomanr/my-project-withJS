@@ -5,9 +5,9 @@ function hideLoader(){
     loader.classList.remove("show");
 }
 
-void ShowMessageInfo(string message){
+function ShowMessageInfo( message){
     EasyToast.info("Увага!", message);
 }
-void ShowMessageError(string message){
+function ShowMessageError( message){
     EasyToast.error("Увага! Виникла помилка", message);
 }
