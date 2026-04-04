@@ -2,7 +2,7 @@
 // import iziToast from "izitoast";
 // import "izitoast/dist/css/iziToast.min.css";
 
-// // import { getListCategories, createCategories } from "./js/product-filter.js";
+// import { getListCategories, createCategories } from "./js/product-filter.js";
 // // import { loadFurnitureByCaregory, loadAllCategories } from "./js/create-product-catalog-img.js";
 
 
@@ -18,7 +18,7 @@
 //   ...categories
 // ];
 //         createCategories(updatedCategories);
-//         await loadAllCategories();
+//         // await loadAllCategories();
 //  const firstItem = document.querySelector(".list-categories-item");
 // if (firstItem) {
 //   firstItem.classList.add("active-item-category");
@@ -39,6 +39,8 @@
 // // Додавання обробника подій для категорій
 // const categoriesContainer = document.querySelector(".list-categories");
 
+// let categoryId;
+
 // categoriesContainer.addEventListener("click", async (event) => {
   
 //   const categoryItem = event.target.closest(".list-categories-item");
@@ -51,12 +53,15 @@
 //   const categoryId = categoryItem.dataset.categoryId;
 //     try {
 //         if (categoryId === "all") {
-//             await loadAllCategories();
+//             // await loadAllCategories();
 //             console.log("Показати всі товари");
+            
 //         } else {
-//             await loadFurnitureByCaregory(categoryId);
+//             // await loadFurnitureByCaregory(categoryId);
 //             console.log(`Показати товари категорії: ${categoryId}`);
+            
 //         }
+      
 //     } catch (error) { 
 //         iziToast.error({
 //         message: "Sorry, помилка при завантаженні товарів за категорією. Please try again!",
@@ -64,5 +69,5 @@
 //       });
 //         console.error("Помилка при завантаженні товарів за категорією:", error);
 //     }
-    
+//     return categoryId;
 // });
