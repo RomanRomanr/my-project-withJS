@@ -21,6 +21,23 @@
   padding-bottom: 80px;
 }
 
+/* Встановлюємо колір для "повних" та "половинок" */
+.list-feedbacks .feedback .rating-fb .star-container .star .star-filled,
+.list-feedbacks .feedback .rating-fb .star-container .star .star-half {
+  color: #080c09;
+}
+
+.list-feedbacks .feedback .rating {
+  margin: 0;
+  justify-content: flex-start;
+  padding-bottom: 24px;
+}
+
+.list-feedbacks .feedback .rating .star-container {
+  column-gap: 4px;
+  margin: 0;
+}
+
 .tetx-feedback {
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
