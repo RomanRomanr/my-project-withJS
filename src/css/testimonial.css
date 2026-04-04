@@ -1,3 +1,8 @@
+:root {
+  --swiper-theme-color: #080c09;
+  --opacity-neutral-darkest-15: rgba(8, 12, 9, 0.15);
+  --color-neutral-lightest: #f2f2f2;
+}
 .sec-feedbacks {
   padding: 64px 0;
 }
@@ -21,7 +26,6 @@
   padding-bottom: 80px;
 }
 
-/* Встановлюємо колір для "повних" та "половинок" */
 .list-feedbacks .feedback .rating-fb .star-container .star .star-filled,
 .list-feedbacks .feedback .rating-fb .star-container .star .star-half {
   color: #080c09;
@@ -53,4 +57,55 @@
   font-size: 16px;
   line-height: 160%;
   color: #202421;
+}
+
+.slider-container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 48px;
+}
+
+.sec-feedbacks .swiper-button-prev .swiper-navigation-icon,
+.sec-feedbacks .swiper-button-next .swiper-navigation-icon {
+  display: none;
+}
+
+.sec-feedbacks .my-feedback-arrow-svg {
+  display: block;
+  fill: #080c09;
+}
+
+.sec-feedbacks .slider-container .swiper-pagination {
+  position: static;
+  width: auto;
+}
+
+.sec-feedbacks .wrap-swiper-btn {
+  display: flex;
+  flex-direction: row;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.sec-feedbacks .swiper-button-prev,
+.sec-feedbacks .swiper-button-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.sec-feedbacks .swiper-button-next,
+.sec-feedbacks .swiper-button-prev {
+  border: 1px solid var(--opacity-neutral-darkest-15);
+  border-radius: 100px;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  margin-top: 0;
+  background-color: var(--color-neutral-lightest);
+  position: static;
 }

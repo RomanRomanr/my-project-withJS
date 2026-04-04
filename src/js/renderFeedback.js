@@ -8,7 +8,7 @@ export function getRating(rate) {
 
 export function feedbackTemplate(item) {
   const { baseRate, halfRate } = getRating(item.rate);
-  return `<li class="feedback">
+  return `<li class="swiper-slide feedback">
           <div class="rating rating-fb star-svg value-${baseRate} ${halfRate}">
             <div class="star-container">
               <div class="star">

@@ -6,6 +6,11 @@ const serverApi = axios.create({
 });
 
 export const getFeedbacks = async () => {
-  const res = await serverApi.get('/feedbacks');
+  const res = await serverApi.get('/feedbacks', {
+    params: {
+      page: 1,
+      limit: 10
+    }
+  });
   return res.data.feedbacks;
 };
