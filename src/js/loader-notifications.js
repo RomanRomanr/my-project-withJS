@@ -8,15 +8,15 @@ function hideLoader(){
 function showMessage(type, text) {
   if(type === 'success') {
     iziToast.success({
-      title: '',
+      title: 'good',
       message: text,
-      position: ''
+      position: 'topRight'
     });
   } else if(type === 'error') {
     iziToast.error({
-      title: '',
+      title: 'error',
       message: text,
-      position: ''
+      position: 'topRight'
     });
   }
 }
