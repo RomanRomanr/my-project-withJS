@@ -3,8 +3,8 @@ import { getListCategories, createCategories } from "/js/product-filter";
 import { createCatalogueFurniture } from "/js/product-catalog-render";
 import { getAllFurniture, getFurnitureByCategory } from '/js/api-product-catalog';
 import { loadAllCategories, loadFurnitureByCaregory, loadMore, checkBtnStatus } from '/js/create-product-catalog-img';
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
+// import iziToast from "izitoast";
+// import "izitoast/dist/css/iziToast.min.css";
 
 const btnLoadMore = document.querySelector('.btn-load-more');
 
