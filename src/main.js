@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   const markup = feedbacksTemplate(resApi);
   listElems.innerHTML = markup;
 });
-!!=========================
+
+
+
+
+
+
 import { getListCategories, createCategories } from "/js/product-filter";
 import { createCatalogueFurniture } from "/js/product-catalog-render";
 import { getAllFurniture, getFurnitureByCategory } from '/js/api-product-catalog';
