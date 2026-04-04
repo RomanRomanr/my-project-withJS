@@ -2,12 +2,14 @@ import iziToast from "izitoast";
 import 'izitoast/dist/css/iziToast.min.css'
 
 const loader = document.querySelector(".loader");
-
-export function showLoader(){
-    loader.classList.add("show")
+const overlay = document.querySelector('.loader-overlay');
+export function showLoader() {
+    overlay.classList.remove("hidden");
+    loader.classList.add("show");
 }
 export function hideLoader(){
     loader.classList.remove("show");
+    overlay.classList.add("hidden");
 }
 
 export function ShowMessageInfo(message) {
