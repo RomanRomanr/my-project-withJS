@@ -10,10 +10,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 16px;
 }
 
 /* Модалка */
-.modal-order-conteiner {
+.modal-order-container {
   position: relative;
   width: 335px;
   height: 703px;
@@ -101,9 +102,7 @@
 .modal-order-form-textarea:focus {
   border: 1px solid rgba(8, 12, 9, 0.4);
 }
-.modal-order-form-textarea:focus {
-  border: 1px solid rgba(8, 12, 9, 0.4);
-}
+
 .modal-order-form-textarea::placeholder {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -148,7 +147,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .modal-order-conteiner {
+  .modal-order-container {
     width: 704px;
     height: 671px;
     padding: 64px 32px 32px 32px;
@@ -160,7 +159,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .modal-order-conteiner {
+  .modal-order-container {
     width: 866px;
     height: 718px;
     padding: 64px;
