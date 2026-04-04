@@ -5,18 +5,9 @@ function hideLoader(){
     loader.classList.remove("show");
 }
 
-function showMessage(type, text) {
-  if(type === 'success') {
-    iziToast.success({
-      title: 'good',
-      message: text,
-      position: 'topRight'
-    });
-  } else if(type === 'error') {
-    iziToast.error({
-      title: 'error',
-      message: text,
-      position: 'topRight'
-    });
-  }
+void ShowMessageInfo(string message){
+    EasyToast.info("Увага!", message);
+}
+void ShowMessageError(string message){
+    EasyToast.error("Увага! Виникла помилка", message);
 }

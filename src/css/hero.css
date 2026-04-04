@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  max-width: 320px;
+  max-width: 100%;
   min-height: 348px;
   margin: auto;
 }
@@ -30,7 +30,6 @@
         rgba(0, 0, 0, 0.6)
       ),
       url('/img/hero/bg-tab.jpg');
-    max-width: 768px;
     min-height: 325px;
   }
 }
@@ -52,7 +51,6 @@
         rgba(0, 0, 0, 0.5)
       ),
       url('/img/hero/bg-desk.jpg');
-    max-width: 1440px;
     min-height: 462px;
   }
 }
