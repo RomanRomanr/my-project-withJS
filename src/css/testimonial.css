@@ -1,0 +1,56 @@
+.sec-feedbacks {
+  padding: 64px 0;
+}
+
+.title-feedback {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: 0.01em;
+  color: #202421;
+  padding-bottom: 24px;
+}
+
+.paragraph {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  color: #202421;
+  padding-bottom: 80px;
+}
+
+/* Встановлюємо колір для "повних" та "половинок" */
+.list-feedbacks .feedback .rating-fb .star-container .star .star-filled,
+.list-feedbacks .feedback .rating-fb .star-container .star .star-half {
+  color: #080c09;
+}
+
+.list-feedbacks .feedback .rating {
+  margin: 0;
+  justify-content: flex-start;
+  padding-bottom: 24px;
+}
+
+.list-feedbacks .feedback .rating .star-container {
+  column-gap: 4px;
+  margin: 0;
+}
+
+.tetx-feedback {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 160%;
+  color: #202421;
+  padding-bottom: 24px;
+}
+
+.name-author {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  color: #202421;
+}
