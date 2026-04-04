@@ -40,7 +40,7 @@
         rgba(0, 0, 0, 0.6),
         rgba(0, 0, 0, 0.6)
       ),
-      url('/img/hero/bg@2-tab.jpg');
+      url('/img/hero/bg@2x-tab.jpg');
   }
 }
 @media screen and (min-width: 1440px) {

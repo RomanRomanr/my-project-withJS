@@ -1,7 +1,7 @@
-function showLoader(){
+export function showLoader(){
     loader.classList.add("show")
 }
-function hideLoader(){
+export function hideLoader(){
     loader.classList.remove("show");
 }
 
