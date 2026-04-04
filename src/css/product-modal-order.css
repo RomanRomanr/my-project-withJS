@@ -1,0 +1,95 @@
+/* Бекдроп */
+.modal-order {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Модалка */
+.modal-order-conteiner {
+  border-radius: 8px;
+  padding-block: 64px;
+  padding-inline: 20px;
+  width: 335px;
+  height: 703px;
+  background-color: #fff;
+}
+
+/* Кнопка закриття */
+.modal-order-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Заголовок */
+.modal-order-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+/* Форма */
+.modal-order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Label */
+.modal-order-form-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  gap: 8px;
+}
+
+/* Input */
+.modal-order-form-input {
+  height: 48px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  padding: 0 16px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Textarea */
+.modal-order-form-textarea {
+  height: 120px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  padding: 12px 16px;
+  resize: none;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Кнопка */
+.modal-order-submit-btn {
+  margin-top: 20px;
+  height: 52px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to bottom, #8b0000, #5a0000);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.modal-order-submit-btn:hover {
+  opacity: 0.8;
+}
