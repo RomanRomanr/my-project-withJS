@@ -94,7 +94,6 @@
     .footer-inner {
         flex-direction: row;
         gap: 80px;
-        justify-content: space-between;
         align-items: center;
         padding-bottom: 0;
     }
