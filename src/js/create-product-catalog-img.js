@@ -1,5 +1,5 @@
 
-
+import { getFurnitureByCategory } from './api-product-catalog';
 import { createCatalogueFurniture } from './product-catalog-render';
 import { getAllFurniture } from './api-product-catalog';
 
@@ -13,6 +13,7 @@ let totalPage;
 //  Create markup for all categories
 export async function loadAllCategories() {
   page = 1;
+  categoryID = null;
   try {
     const responce = await getAllFurniture(page);
     const markup = createCatalogueFurniture(responce.furnitures);
@@ -23,7 +24,9 @@ export async function loadAllCategories() {
 }
 
 // Create markup by category
-export async function loadFurnitureByCaregory(categoryID, page) {
+export async function loadFurnitureByCategory(id) {
+  page = 1;
+  categoryID = id;
   try {
     const responce = await getFurnitureByCategory(categoryID, page);
     const markup = createCatalogueFurniture(responce.furnitures);
@@ -34,9 +37,12 @@ export async function loadFurnitureByCaregory(categoryID, page) {
 }
 
 //Pagination  categories
-btnLoadMore.addEventListener('click', loadMore); //треба додати в main ? функцію loadMore експортувати
+if (btnLoadMore) {
+  btnLoadMore.addEventListener('click', loadMore);
+}
 
 export async function loadMore() {
+  checkBtnStatus();
   page += 1;
   try {
     if (!categoryID) {

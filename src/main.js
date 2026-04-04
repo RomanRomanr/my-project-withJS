@@ -1,16 +1,13 @@
 
-import { getListCategories, createCategories } from "/js/product-filter";
-import { createCatalogueFurniture } from "/js/product-catalog-render";
-import { getAllFurniture, getFurnitureByCategory } from '/js/api-product-catalog';
-import { loadAllCategories, loadFurnitureByCaregory, loadMore, checkBtnStatus } from '/js/create-product-catalog-img';
+
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-const btnLoadMore = document.querySelector('.btn-load-more');
+import { getListCategories, createCategories } from "./js/product-filter.js";
+import { loadFurnitureByCategory, loadAllCategories } from "./js/create-product-catalog-img.js";
 
 
-// Завантаження категорій при завантаженні сторінки
-document.addEventListener("DOMContentLoaded", async event => { 
+document.addEventListener("DOMContentLoaded", async () => { 
     try { 
     const categories = await getListCategories();
     const updatedCategories = [
@@ -37,19 +34,18 @@ if (firstItem) {
     });
 
 
+ 
 
 
-// Додавання обробника подій для категорій
 const categoriesContainer = document.querySelector(".list-categories");
 
-let categoryId;
-
 categoriesContainer.addEventListener("click", async (event) => {
+   
   
   const categoryItem = event.target.closest(".list-categories-item");
   if (!categoryItem) return;
 
-  const items = document.querySelectorAll(".list-categories-item");
+  const items = categoriesContainer.querySelectorAll(".list-categories-item");
   items.forEach(item => item.classList.remove("active-item-category"));
   categoryItem.classList.add("active-item-category");
 
@@ -58,13 +54,10 @@ categoriesContainer.addEventListener("click", async (event) => {
         if (categoryId === "all") {
             await loadAllCategories();
             console.log("Показати всі товари");
-            
         } else {
-            await loadFurnitureByCaregory(categoryId);
-            console.log(`Показати товари категорії: ${categoryId}`);
-            
+            await loadFurnitureByCategory(categoryId);
+            console.log(`Показати товари категорії: ${categoryId}` );
         }
-      
     } catch (error) { 
         iziToast.error({
         message: "Sorry, помилка при завантаженні товарів за категорією. Please try again!",
@@ -72,14 +65,5 @@ categoriesContainer.addEventListener("click", async (event) => {
       });
         console.error("Помилка при завантаженні товарів за категорією:", error);
     }
-    return categoryId;
+    
 });
-
-
-
-
-
-
-
-
-btnLoadMore.addEventListener('click', loadMore);
