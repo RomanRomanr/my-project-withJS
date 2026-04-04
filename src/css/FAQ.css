@@ -19,17 +19,19 @@
 
 .faq-list .faq-item .faq-title{
     margin: 0;
-    position: relative;
-    padding-bottom: 20px ;
-    padding-top: 20px ;
+    padding: 0;
 }
 
 
 .faq-list .faq-item .faq-title .faq-toggle{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     border: none;
     background: transparent;
-    padding: 0 56px 0 0;
+    padding: 20px 56px 20px 0;
     margin: 0;
     text-align: left;
     font: inherit;
@@ -37,14 +39,21 @@
     font-size: 18px;
     line-height: 1.6;
     cursor: pointer;
-    padding-top: 20px;
+}
+
+.faq-wrapper{
+    width: 335px;
+    height: 528px;
+    max-width: 1318px;
+    margin: 0 auto;
 }
 
 
 
 .faq-icon{
     position: absolute;
-    top: 33px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 0;
     width: 32px;
     height: 32px;
@@ -65,9 +74,7 @@
     padding-bottom: 24px;
 }
 
-.faq-icon-last{
-    top: 20px;
-}
+
 
 .ac-trigger::after {
   display: none ;
@@ -79,8 +86,18 @@
         padding-top: 21.5px;
     }
     .faq-icon{
-        top: 20px;
+        top: 50%;
+        transform: translateY(-50%);
     }
+
+    .faq-section{
+    padding: 48px 32px;
+}
+
+.faq-wrapper{
+    width: 704px;
+    height: 815px;
+}
     
 }
 /* Styles for Desktop devices */
@@ -88,4 +105,13 @@
     .section-title{
         font-size: 48px;
     }
+
+    .faq-section{
+    padding: 80px 64px;
+}
+
+.faq-wrapper{
+    width: 1312px;
+    height: 450px;
+}
 }
