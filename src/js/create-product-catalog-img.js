@@ -1,66 +1,64 @@
-
-import { getFurnitureByCategory } from './api-product-catalog';
 import { createCatalogueFurniture } from './product-catalog-render';
-import { getAllFurniture } from './api-product-catalog';
+import { getAllFurniture, getFurnitureByCategory } from './api-product-catalog';
 
 const ulCataloge = document.querySelector('.furniture-catalog-list');
 const btnLoadMore = document.querySelector('.btn-load-more');
+
+let page = 1;
+let categoryID = null;
+let totalPage = 0;
 const limitPerPage = 8;
-let page;
-let categoryID;
-let totalPage;
 
-//  Create markup for all categories
-export async function loadAllCategories() {
-  page = 1;
-  categoryID = null;
-  try {
-    const responce = await getAllFurniture(page);
-    const markup = createCatalogueFurniture(responce.furnitures);
-    ulCataloge.innerHTML = markup;
-    totalPage = Math.ceil(responce.totalItems / limitPerPage);
-    checkBtnStatus();
-  } catch (error) {}
-}
-
-// Create markup by category
-export async function loadFurnitureByCategory(id) {
+// Завантаження категорії або всіх товарів
+async function loadCategory(id = null) {
   page = 1;
   categoryID = id;
-  try {
-    const responce = await getFurnitureByCategory(categoryID, page);
-    const markup = createCatalogueFurniture(responce.furnitures);
-    ulCataloge.innerHTML = markup;
-    totalPage = Math.ceil(responce.totalItems / limitPerPage);
-    checkBtnStatus();
-  } catch (error) {}
-}
 
-//Pagination  categories
-if (btnLoadMore) {
-  btnLoadMore.addEventListener('click', loadMore);
-}
+  let res;
+  if (!categoryID) {
+    res = await getAllFurniture(page);
+  } else {
+    res = await getFurnitureByCategory(categoryID, page);
+  }
 
-export async function loadMore() {
+  ulCataloge.innerHTML = createCatalogueFurniture(res.furnitures);
+  totalPage = Math.ceil(res.totalItems / limitPerPage);
   checkBtnStatus();
-  page += 1;
-  try {
-    if (!categoryID) {
-      const responce = await getAllFurniture(page);
-      const markup = createCatalogueFurniture(responce.furnitures);
-      ulCataloge.insertAdjacentHTML('beforeend', markup);
-    } else {
-      const responce = await getFurnitureByCategory(categoryID, page);
-      const markup = createCatalogueFurniture(responce.furnitures);
-      ulCataloge.insertAdjacentHTML('beforeend', markup);
-    }
-  } catch (error) {}
 }
-// Check last page
+
+// Обробник кнопки "Показати ще"
+btnLoadMore.addEventListener('click', async () => {
+  page += 1;
+
+  let res;
+  if (!categoryID) {
+    res = await getAllFurniture(page);
+  } else {
+    res = await getFurnitureByCategory(categoryID, page);
+  }
+
+  ulCataloge.insertAdjacentHTML('beforeend', createCatalogueFurniture(res.furnitures));
+  checkBtnStatus();
+});
+
+// Перевірка кнопки
 export function checkBtnStatus() {
-  if (page >= totalPage) {
+  if (totalPage <= 1) {
+    btnLoadMore.style.display = "none"; 
+  } else if (page >= totalPage) {
     btnLoadMore.disabled = true;
+    btnLoadMore.style.display = "none"; 
   } else {
     btnLoadMore.disabled = false;
+    btnLoadMore.style.display = "block";
   }
+}
+
+// Експорт для main.js
+export async function loadAllCategories() {
+  await loadCategory(null);
+}
+
+export async function loadFurnitureByCategory(id) {
+  await loadCategory(id);
 }
