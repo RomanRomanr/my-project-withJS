@@ -1,0 +1,138 @@
+.furniture-catalog-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+@media screen and (min-width: 768px) {
+  .furniture-catalog-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .furniture-catalog-list {
+    row-gap: 40px;
+  }
+}
+.furniture-catalog-items {
+  max-width: 335px;
+}
+@media screen and (min-width: 768px) {
+  .furniture-catalog-items {
+    max-width: 340px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .furniture-catalog-items {
+    max-width: 310px;
+  }
+}
+
+.furniture-catalog-img {
+  max-width: 100%;
+  min-height: 280px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .furniture-catalog-img {
+    max-width: 100%;
+    min-height: 285px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .furniture-catalog-img {
+    max-width: 100%;
+    min-height: 260px;
+  }
+}
+.furniture-catalog-title {
+  min-height: 58px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  font-family: 'Raleway', sans-serif;
+  color: #080c09;
+}
+
+.color-list {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.color-items {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(8, 12, 9, 0.1);
+}
+.furniture-catalog-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 121px;
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.05);
+  background-color: rgba(8, 12, 9, 0.05);
+  color: #080c09;
+  border-radius: 100px;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  text-transform: capitalize;
+  line-height: 1.6;
+  font-weight: 500;
+
+  &:hover,
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .furniture-catalog-btn {
+    padding: 10px 124px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    .furniture-catalog-btn {
+      padding: 10px 109px;
+    }
+  }
+}
+.furniture-catalog-price {
+  margin-bottom: 16px;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #080c09;
+  font-family: 'Raleway', sans-serif;
+}
+.btn-load-more {
+  display: block;
+  margin: 42px auto 48px;
+  padding: 10px 120px;
+  border-radius: 100px;
+  background-color: #6b0609;
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  font-family: 'Raleway', sans-serif;
+  border: none;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    opacity: 0.5;
+  }
+}
