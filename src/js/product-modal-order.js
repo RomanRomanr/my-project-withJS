@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 (() => {
   const refs = {
     // Додати атрибут data-order-open на кнопку відкриття
@@ -53,4 +55,30 @@ const button = document.querySelector('.modal-order-submit-btn');
 
 form.addEventListener('input', () => {
   button.disabled = !form.checkValidity();
+});
+
+// запит POST /orders
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const { userName, phone, comment } = e.target.elements;
+  const formData = {
+    name: userName.value,
+    phone: phone.value,
+    modelId: '',
+    color: '',
+    comment: comment.value,
+  };
+  try {
+    const response = await axios.post(
+      'https://furniture-store-v2.b.goit.study/api/orders',
+      formData
+    );
+    const orderData = response.data;
+    const message = `Вітаю ${orderData.name}, Ви замовили ${orderData.model}. Номер Вашого замовлення - ${orderData.orderNum}.`;
+    console.log('orderData :>> ', orderData);
+
+    e.target.reset();
+  } catch (error) {
+    console.log(error.message);
+  }
 });
