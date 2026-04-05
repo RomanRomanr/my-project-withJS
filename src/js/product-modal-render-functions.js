@@ -181,6 +181,7 @@ export function modalGallery(product) {
           class="modal-button"
           type="button"
           data-product-id="${productId}"
+          data-order-open
         >
           Перейти до замовлення
         </button>
