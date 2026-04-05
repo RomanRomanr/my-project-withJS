@@ -15,13 +15,16 @@
     // is-open це клас який буде додаватися/забиратися на бекдроп при натисканні на кнопки
     refs.modal.classList.toggle('is-open');
     // відміна скролу при відкритті модалки
-    document.body.classList.add('modal--order-open');
+    document.body.classList.toggle(
+      'modal--order-open',
+      refs.modal.classList.contains('is-open')
+    );
   }
   // закриття модалки кнопкою esc
   document.addEventListener('keydown', handleKeyDown);
 
   function handleKeyDown(event) {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && refs.modal.classList.contains('is-open')) {
       closeMenu();
     }
   }
@@ -31,7 +34,7 @@
     // якщо меню відкрите і клік НЕ всередині контейнера меню
     if (
       refs.modal.classList.contains('is-open') &&
-      !e.target.closest('.mobile-order-container') &&
+      !e.target.closest('.modal-order-container') &&
       !e.target.closest('[data-order-open]')
     ) {
       closeMenu();
