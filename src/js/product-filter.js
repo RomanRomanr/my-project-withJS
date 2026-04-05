@@ -1,28 +1,29 @@
 // отримання категорій з API
 import axios from "axios";
 
-export async function getListCategories() {
-  const response = await axios.get("https://furniture-store-v2.b.goit.study/api/categories");
+const BASE_URL = "https://furniture-store-v2.b.goit.study/api";
 
+export async function getListCategories() {
+  const response = await axios.get(`${BASE_URL}/categories`);
   return response.data;
 }
 
-
 // створення категорій на сторінці
-const categoriesContainer = document.querySelector(".list-categories");
-
 export function createCategories(categories) {
+  const container = document.querySelector(".list-categories");
+  if (!container) return;
+
   const markup = categories
     .map(
-      (category) => `
-      <li class="list-categories-item" data-category-id="${category._id}">
-              <p class="list-categories-name">${category.name}</p>
-            </li>
+      ({ _id, name }) => `
+        <li class="list-categories-item" data-category-id="${_id}">
+          <p class="list-categories-name">${name}</p>
+        </li>
       `
     )
     .join("");
 
-  categoriesContainer.innerHTML = markup;
+  container.innerHTML = markup;
 }
 
 
