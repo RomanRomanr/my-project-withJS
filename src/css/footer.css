@@ -1,0 +1,121 @@
+.footer {
+  background-color: #7b0d1e;
+  color: #ffffff;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 32px;
+}
+
+/* Logo */
+.footer-logo {
+  display: inline-flex;
+  transition: opacity 0.2s ease;
+  width: 228px;
+  height: 97px;
+  align-items: center;
+}
+
+.footer-logo:hover {
+  opacity: 0.8;
+}
+
+/* Nav links */
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-nav-link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #ffffff;
+  transition: opacity 0.2s ease;
+}
+
+.footer-nav-link:hover {
+  opacity: 0.7;
+}
+
+/* Social icons */
+.footer-socials-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-socials-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: opacity 0.2s ease;
+}
+
+.footer-socials-item {
+  font-size: 0;
+}
+
+.footer-socials-link:hover {
+  opacity: 0.7;
+}
+
+.footer-socials-link svg {
+  fill: white;
+}
+
+/* Copyright */
+.footer-copyright {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* media screen */
+
+@media only screen and (min-width: 768px) {
+
+  .footer-nav-list {
+     flex-direction: row;
+     gap: 32px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+    .footer-inner {
+        flex-direction: row;
+        gap: 80px;
+        align-items: center;
+        padding-bottom: 0;
+        justify-content: space-between;
+    }
+
+    .footer-logo { order: 1; } .footer-copyright { order: 2; } .footer-nav { order: 3; } .footer-socials { order: 4; }
+
+    .footer-copyright {
+    font-size: 0;
+  }
+
+  .footer-nav-link {
+    padding: 32px 12px;
+    margin: -32px -12px;
+  }
+   .footer-socials-link {
+    padding: 12px;
+    margin: -12px;
+   }
+  
+  .footer-copyright::before {
+    content: "© 2025 Меблерія. Всі права захищені.";
+    font-size: 14px;
+  }
+}
