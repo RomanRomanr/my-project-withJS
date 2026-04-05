@@ -1,7 +1,5 @@
 /* @media screen and (min-width: 768px) */
 
-.container {
-}
 .about-us-box {
     background-color: #f0e6e6;;
     display: flex;
@@ -9,6 +7,11 @@
     flex-direction: column;
     padding-bottom: 64px;
     padding-top: 64px;
+}
+.box-for-text{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 .about-us-title {
     font-family: "Raleway", sans-serif;
@@ -32,4 +35,28 @@ color: #080c09;
 .img-about-us {
     width: 100%;
     border-radius: 8px;
+}
+@media screen and (min-width: 768px){
+    .img-box-about {
+    max-width: 704px;
+    
+}
+.about-us-box {
+    padding-bottom: 32px;
+    padding-top: 32px;
+}
+}
+@media screen and (min-width: 1440px){
+    .about-us-box{
+        flex-direction: row;
+    }
+    .child {
+  flex: 1;
+}
+.box-for-text{
+    justify-content: center;
+}
+.about-us-title{
+    font-size: 48px;
+}
 }
