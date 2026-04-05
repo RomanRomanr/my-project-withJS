@@ -68,16 +68,18 @@ document.addEventListener('click', async event => {
 
   if (orderButton) {
     const { productId } = orderButton.dataset;
+    const selectedColorButton = document.querySelector('.modal-color--selected');
+    const selectedColor = selectedColorButton?.dataset.colorValue ?? null;
 
     if (productId) {
       hideModal();
       document.dispatchEvent(
         new CustomEvent('product-order-click', {
-          detail: { productId },
+          detail: { productId, color: selectedColor },
         })
           
       );
-        console.log(productId);
+        console.log({ productId, color: selectedColor });
     }
 
       return;

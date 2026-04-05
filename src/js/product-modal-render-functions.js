@@ -63,6 +63,7 @@ function renderColors(colors = []) {
             aria-label="Колір товару: ${color}"
             aria-pressed="${isSelected}"
             data-color-option
+            data-color-value="${color}"
           ></button>
         </li>
       `;
