@@ -9,7 +9,6 @@ let categoryID = null;
 let totalPage = 0;
 const limitPerPage = 8;
 
-// Завантаження категорії або всіх товарів
 async function loadCategory(id = null) {
   page = 1;
   categoryID = id;
@@ -26,7 +25,6 @@ async function loadCategory(id = null) {
   checkBtnStatus();
 }
 
-// Обробник кнопки "Показати ще"
 btnLoadMore.addEventListener('click', async () => {
   page += 1;
 
@@ -41,7 +39,6 @@ btnLoadMore.addEventListener('click', async () => {
   checkBtnStatus();
 });
 
-// Перевірка кнопки
 export function checkBtnStatus() {
   if (totalPage <= 1) {
     btnLoadMore.style.display = "none"; 
@@ -54,7 +51,6 @@ export function checkBtnStatus() {
   }
 }
 
-// Експорт для main.js
 export async function loadAllCategories() {
   await loadCategory(null);
 }
