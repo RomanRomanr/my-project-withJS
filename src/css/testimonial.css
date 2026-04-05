@@ -2,6 +2,8 @@
   --swiper-theme-color: #080c09;
   --opacity-neutral-darkest-15: rgba(8, 12, 9, 0.15);
   --color-neutral-lightest: #f2f2f2;
+  --color-madang: #6b0609;
+  --color-white: #fff;
 }
 .sec-feedbacks {
   padding: 64px 0;
@@ -34,7 +36,6 @@
 .list-feedbacks .feedback .rating {
   margin: 0;
   justify-content: flex-start;
-  padding-bottom: 24px;
 }
 
 .list-feedbacks .feedback .rating .star-container {
@@ -48,7 +49,7 @@
   font-size: 20px;
   line-height: 160%;
   color: #202421;
-  padding-bottom: 24px;
+  padding: 24px 48px 24px 0;
 }
 
 .name-author {
@@ -59,6 +60,10 @@
   color: #202421;
 }
 
+.sec-feedbacks .swiper .list-feedbacks .feedback {
+  width: 341px;
+}
+
 .slider-container {
   height: 100%;
   display: flex;
@@ -67,19 +72,21 @@
   padding-top: 48px;
 }
 
-.sec-feedbacks .swiper-button-prev .swiper-navigation-icon,
-.sec-feedbacks .swiper-button-next .swiper-navigation-icon {
-  display: none;
-}
-
-.sec-feedbacks .my-feedback-arrow-svg {
-  display: block;
-  fill: #080c09;
+.sec-feedbacks .slider-container .swiper-pagination-bullet-active {
+  background: #080c09;
 }
 
 .sec-feedbacks .slider-container .swiper-pagination {
   position: static;
   width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.sec-feedbacks .slider-container .swiper-pagination .swiper-pagination-bullet {
+  margin: 0;
 }
 
 .sec-feedbacks .wrap-swiper-btn {
@@ -108,4 +115,60 @@
   margin-top: 0;
   background-color: var(--color-neutral-lightest);
   position: static;
+}
+
+.sec-feedbacks .swiper-button-next:active,
+.sec-feedbacks .swiper-button-prev:active {
+  background-color: var(--color-madang);
+}
+
+.sec-feedbacks .swiper-button-prev .swiper-navigation-icon,
+.sec-feedbacks .swiper-button-next .swiper-navigation-icon {
+  display: none;
+}
+
+.sec-feedbacks .my-feedback-arrow-svg {
+  display: block;
+  fill: #080c09;
+  transition: fill 0.3s ease; 
+}
+
+.sec-feedbacks .swiper-button-prev:active .my-feedback-arrow-svg,
+.sec-feedbacks .swiper-button-next:active .my-feedback-arrow-svg {
+  fill: var(--color-white);
+}
+
+@media screen and (min-width: 768px) {
+  .sec-feedbacks {
+    padding: 32px 0;
+  }
+
+  .sec-feedbacks .feedback {
+    width: 341px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .sec-feedbacks {
+    padding: 64px 0;
+  }
+
+  .sec-feedbacks .feedback {
+    width: 341px;
+  }
+
+  .sec-feedbacks .swiper-button-next:hover,
+  .sec-feedbacks .swiper-button-prev:hover {
+    background-color: #975052;
+  }
+
+  .sec-feedbacks .swiper-button-prev:hover .my-feedback-arrow-svg,
+  .sec-feedbacks .swiper-button-next:hover .my-feedback-arrow-svg {
+    fill: var(--color-white);
+  }
+
+  .sec-feedbacks .swiper-button-next:active,
+  .sec-feedbacks .swiper-button-prev:active {
+    background-color: var(--color-madang);
+  }
 }
