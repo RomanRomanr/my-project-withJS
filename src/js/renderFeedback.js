@@ -1,4 +1,4 @@
-export function getRating(rate) {
+function getRating(rate) {
   const roundRate = Math.round(rate * 2) / 2;
   const baseRate = Math.floor(roundRate);
   const halfRate = roundRate % 1 != 0 ? 'half' : '';
