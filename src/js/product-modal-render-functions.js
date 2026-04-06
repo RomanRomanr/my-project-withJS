@@ -1,4 +1,5 @@
-import StarRating from 'star-rating.js';
+// import StarRating from 'star-rating.js';
+// import 'css-star-rating/css/star-rating.css';
 
 const refs = {
   modal: document.querySelector('.modal'),
