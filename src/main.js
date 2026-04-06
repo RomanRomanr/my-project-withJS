@@ -1,8 +1,15 @@
-import Accordion from "accordion-js";
-import "accordion-js/dist/accordion.min.css";
-import { getListCategories, createCategories } from "./js/product-filter.js";
-import { loadAllCategories, loadFurnitureByCategory } from "./js/create-product-catalog-img.js";
-import { ShowMessageError, showLoader, hideLoader} from "./js/loader-notifications";
+import Accordion from 'accordion-js';
+import 'accordion-js/dist/accordion.min.css';
+import { getListCategories, createCategories } from './js/product-filter.js';
+import {
+  loadAllCategories,
+  loadFurnitureByCategory,
+} from './js/create-product-catalog-img.js';
+import {
+  ShowMessageError,
+  showLoader,
+  hideLoader,
+} from './js/loader-notifications';
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -15,14 +22,13 @@ import { getFeedbacks } from './js/feedbackApi';
 import { feedbacksTemplate } from './js/renderFeedback';
 
 // import 'star-rating.js/css';
-import { getCategories, getFurnitureById, getFurnitures } from './js/furniture-api';
+import { getFurnitureById } from './js/furniture-api';
 import { modalGallery, showModal } from './js/product-modal-render-functions';
+import { closeOverlay } from './js/product-modal-evente';
 export let firstFurnitureId;
 
-
-
-document.addEventListener("DOMContentLoaded", async () => {
-  const categoriesContainer = document.querySelector(".list-categories");
+document.addEventListener('DOMContentLoaded', async () => {
+  const categoriesContainer = document.querySelector('.list-categories');
 
   try {
     // Завантажуємо категорії з API
@@ -72,10 +78,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 // btnLoadMore.addEventListener('click', loadMore);
 
-
-
-
-
 // header JS block
 // =====================================================
 
@@ -119,8 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('menu-open');
   }
 });
-
-
 
 // for feedback (testimonial)
 // !====================================================!
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// for FAQ 
+// for FAQ
 // !====================================================!
 
 new Accordion('.accordion-container', {
@@ -189,34 +189,18 @@ new Accordion('.accordion-container', {
 
 // for product modal
 // !====================================================!
+// відкриття модального вікна
 
-async function testFurnitureApi() {
-  try {
-    const [furnituresResponse, categories] = await Promise.all([
-      getFurnitures(),
-      getCategories(),
-    ]);
+document.addEventListener('click', async event => {
+  showLoader();
 
-    const furnitures = furnituresResponse.furnitures ?? [];
+  const buttonCatalog = event.target.closest('.furniture-catalog-btn');
+  if (!buttonCatalog) return;
 
-    console.log('Список товарів:', furnitures);
-    console.log('Категорії:', categories);
+  showModal();
+  const btnId = buttonCatalog.dataset.imgid;
+  const product = await getFurnitureById(btnId);
 
-    if (furnitures.length === 0) {
-      console.log('API повернув порожній список товарів.');
-      return;
-    }
-
-    firstFurnitureId = furnitures[5]._id;
-    const product = await getFurnitureById(firstFurnitureId);
-
-    console.log('Деталі першого товару:', product);
-
-    modalGallery(product);
-    showModal();
-  } catch (error) {
-    console.error('Помилка перевірки API меблів:', error);
-  }
-}
-
-testFurnitureApi();
+  modalGallery(product);
+});
+document.addEventListener('click', closeOverlay);

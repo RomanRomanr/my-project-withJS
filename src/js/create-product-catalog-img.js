@@ -37,20 +37,23 @@ btnLoadMore.addEventListener('click', async () => {
     res = await getFurnitureByCategory(categoryID, page);
   }
 
-  ulCataloge.insertAdjacentHTML('beforeend', createCatalogueFurniture(res.furnitures));
+  ulCataloge.insertAdjacentHTML(
+    'beforeend',
+    createCatalogueFurniture(res.furnitures)
+  );
   hideLoader();
   checkBtnStatus();
 });
 
 export function checkBtnStatus() {
   if (totalPage <= 1) {
-    btnLoadMore.style.display = "none"; 
+    btnLoadMore.style.display = 'none';
   } else if (page >= totalPage) {
     btnLoadMore.disabled = true;
-    btnLoadMore.style.display = "none"; 
+    btnLoadMore.style.display = 'none';
   } else {
     btnLoadMore.disabled = false;
-    btnLoadMore.style.display = "block";
+    btnLoadMore.style.display = 'block';
   }
 }
 
