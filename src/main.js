@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('menu-open');
   }
 });
-})();
+
 
 
 // for feedback (testimonial)
