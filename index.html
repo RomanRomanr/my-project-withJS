@@ -15,7 +15,7 @@
     <script type="module" crossorigin src="/my-project-withJS/index.js"></script>
     <link rel="modulepreload" crossorigin href="/my-project-withJS/assets/vendor-d0R7Mxtu.js">
     <link rel="stylesheet" crossorigin href="/my-project-withJS/assets/vendor-C06_kka4.css">
-    <link rel="stylesheet" crossorigin href="/my-project-withJS/assets/index-FZVHHQ0w.css">
+    <link rel="stylesheet" crossorigin href="/my-project-withJS/assets/index-DIO5P99e.css">
   </head>
   <body>
     <header class="page-header">
@@ -321,7 +321,56 @@
   </div>
 </footer>
     
-    
+    <div class="modal-order" data-order>
+  <div class="modal-order-container">
+    <button type="button" class="modal-order-close" data-order-close>
+      <svg class="icon-close-modal-order" width="32" height="32">
+        <use href="../img/icons.svg#icon-x"></use>
+      </svg>
+    </button>
+
+    <h2 class="modal-order-title">Замовити</h2>
+
+    <form class="modal-order-form">
+      <label class="modal-order-form-label">
+        Ім'я*
+        <input
+          type="text"
+          name="userName"
+          placeholder="Дмитро"
+          class="modal-order-form-input"
+          required
+        />
+      </label>
+
+      <label class="modal-order-form-label">
+        Телефон*
+        <input
+          type="tel"
+          name="phone"
+          placeholder="38 099 123 22 11"
+          class="modal-order-form-input"
+          pattern="^\+?380\d{9}$"
+          required
+        />
+      </label>
+
+      <label class="modal-order-form-label">
+        Коментар
+        <textarea
+          placeholder="Введіть ваш коментар"
+          class="modal-order-form-textarea"
+          name="comment"
+        ></textarea>
+      </label>
+
+      <button type="submit" class="modal-order-submit-btn">
+        Надіслати заявку
+      </button>
+    </form>
+  </div>
+</div>
+
     <div class="loader-overlay hidden">
   <span id="loader" class="loader"></span>
 </div>
