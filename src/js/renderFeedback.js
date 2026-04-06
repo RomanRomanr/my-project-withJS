@@ -14,85 +14,85 @@ export function feedbackTemplate(item) {
               <div class="star">
                 <svg class="star-empty" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star"
+                    xlink:href="./img/icons.svg#icon-star"
                   ></use>
                 </svg>
                 <svg class="star-half" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star-half"
+                    xlink:href="./img/icons.svg#icon-star-half"
                   ></use>
                 </svg>
                 <svg class="star-filled" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star-filled"
+                    xlink:href="./img/icons.svg#icon-star-filled"
                   ></use>
                 </svg>
               </div>
               <div class="star">
                 <svg class="star-empty" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star-half"
+                    xlink:href="./img/icons.svg#icon-star"
                   ></use>
                 </svg>
                 <svg class="star-half" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star-half"
+                    xlink:href="./img/icons.svg#icon-star-half"
                   ></use>
                 </svg>
                 <svg class="star-filled" width="20" height="20">
                   <use 
-                    xlink:href="/img/icons.svg#icon-star-filled"
+                    xlink:href="./img/icons.svg#icon-star-filled"
                   ></use>
                 </svg>
               </div>
               <div class="star">
                 <svg class="star-empty" width="20" height="20">
                   <use             
-                    xlink:href="/img/icons.svg#icon-star"
+                    xlink:href="./img/icons.svg#icon-star"
                   ></use>
                 </svg>
                 <svg class="star-half" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star-half"
+                    xlink:href="./img/icons.svg#icon-star-half"
                   ></use>
                 </svg>
                 <svg class="star-filled" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star-filled"
+                    xlink:href="./img/icons.svg#icon-star-filled"
                   ></use>
                 </svg>
               </div>
               <div class="star">
                 <svg class="star-empty" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star"
+                    xlink:href="./img/icons.svg#icon-star"
                   ></use>
                 </svg>
                 <svg class="star-half" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star-half"
+                    xlink:href="./img/icons.svg#icon-star-half"
                   ></use>
                 </svg>
                 <svg class="star-filled" width="20" height="20">
                   <use 
-                    xlink:href="/img/icons.svg#icon-star-filled"
+                    xlink:href="./img/icons.svg#icon-star-filled"
                   ></use>
                 </svg>
               </div>
               <div class="star">
                 <svg class="star-empty" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star"
+                    xlink:href="./img/icons.svg#icon-star"
                   ></use>
                 </svg>
                 <svg class="star-half" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star-half"
+                    xlink:href="./img/icons.svg#icon-star-half"
                   ></use>
                 </svg>
                 <svg class="star-filled" width="20" height="20">
                   <use
-                    xlink:href="/img/icons.svg#icon-star-filled"
+                    xlink:href="./img/icons.svg#icon-star-filled"
                   ></use>
                 </svg>
               </div>
