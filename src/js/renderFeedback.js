@@ -1,3 +1,4 @@
+import spriteUrl from '../img/icons.svg';
 function getRating(rate) {
   const roundRate = Math.round(rate * 2) / 2;
   const baseRate = Math.floor(roundRate);
@@ -14,85 +15,85 @@ export function feedbackTemplate(item) {
               <div class="star">
                 <svg class="star-empty" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star"
+                    href="${spriteUrl}#icon-star"
                   ></use>
                 </svg>
                 <svg class="star-half" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star-half"
+                    href="${spriteUrl}#icon-star-half"
                   ></use>
                 </svg>
                 <svg class="star-filled" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star-filled"
+                    href="${spriteUrl}#icon-star-filled"
                   ></use>
                 </svg>
               </div>
               <div class="star">
                 <svg class="star-empty" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star"
+                    href="${spriteUrl}#icon-star"
                   ></use>
                 </svg>
                 <svg class="star-half" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star-half"
+                    href="${spriteUrl}#icon-star-half"
                   ></use>
                 </svg>
                 <svg class="star-filled" width="20" height="20">
                   <use 
-                    href="/img/icons.svg#icon-star-filled"
+                    href="${spriteUrl}#icon-star-filled"
                   ></use>
                 </svg>
               </div>
               <div class="star">
                 <svg class="star-empty" width="20" height="20">
                   <use             
-                    href="/img/icons.svg#icon-star"
+                    href="${spriteUrl}#icon-star"
                   ></use>
                 </svg>
                 <svg class="star-half" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star-half"
+                    href="${spriteUrl}#icon-star-half"
                   ></use>
                 </svg>
                 <svg class="star-filled" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star-filled"
+                    href="${spriteUrl}#icon-star-filled"
                   ></use>
                 </svg>
               </div>
               <div class="star">
                 <svg class="star-empty" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star"
+                    href="${spriteUrl}#icon-star"
                   ></use>
                 </svg>
                 <svg class="star-half" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star-half"
+                    href="${spriteUrl}#icon-star-half"
                   ></use>
                 </svg>
                 <svg class="star-filled" width="20" height="20">
                   <use 
-                    href="/img/icons.svg#icon-star-filled"
+                    href="${spriteUrl}#icon-star-filled"
                   ></use>
                 </svg>
               </div>
               <div class="star">
                 <svg class="star-empty" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star"
+                    href="${spriteUrl}#icon-star"
                   ></use>
                 </svg>
                 <svg class="star-half" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star-half"
+                    href="${spriteUrl}#icon-star-half"
                   ></use>
                 </svg>
                 <svg class="star-filled" width="20" height="20">
                   <use
-                    href="/img/icons.svg#icon-star-filled"
+                    href="${spriteUrl}#icon-star-filled"
                   ></use>
                 </svg>
               </div>
