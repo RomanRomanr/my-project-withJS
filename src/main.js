@@ -14,7 +14,7 @@ import 'swiper/css/pagination';
 import { getFeedbacks } from './js/feedbackApi';
 import { feedbacksTemplate } from './js/renderFeedback';
 
-import 'star-rating.js/css';
+// import 'star-rating.js/css';
 import { getCategories, getFurnitureById, getFurnitures } from './js/furniture-api';
 import { modalGallery, showModal } from './js/product-modal-render-functions';
 export let firstFurnitureId;
