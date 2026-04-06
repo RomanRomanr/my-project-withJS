@@ -38,8 +38,12 @@
 
 
 import { getFurnitureById } from './furniture-api';
-import { hideModal, modalGallery, showModal } from './product-modal-render-functions';
-
+import {
+  hideModal,
+  modalGallery,
+  showModal,
+} from './product-modal-render-functions';
+export let selectedColor;
 document.addEventListener('click', async event => {
   const closeButton = event.target.closest('.modal-close');
   const overlay = event.target.classList.contains('modal-overlay');
@@ -68,8 +72,10 @@ document.addEventListener('click', async event => {
 
   if (orderButton) {
     const { productId } = orderButton.dataset;
-    const selectedColorButton = document.querySelector('.modal-color--selected');
-    const selectedColor = selectedColorButton?.dataset.colorValue ?? null;
+    const selectedColorButton = document.querySelector(
+      '.modal-color--selected'
+    );
+    selectedColor = selectedColorButton?.dataset.colorValue ?? null;
     const dataColorId = {
       productId,
       color: selectedColor,
@@ -81,17 +87,15 @@ document.addEventListener('click', async event => {
         new CustomEvent('product-order-click', {
           detail: dataColorId,
         })
-          
       );
-        console.log(dataColorId);
+      console.log(dataColorId);
     }
 
-      return;
-//   як отримати id  в іншому місці
-//   document.addEventListener('product-order-click', event => {
-//   console.log(event.detail.productId);
-// });
-     
+    return;
+    //   як отримати id  в іншому місці
+    //   document.addEventListener('product-order-click', event => {
+    //   console.log(event.detail.productId);
+    // });
   }
 
   const productTrigger = event.target.closest('[data-product-id]');
