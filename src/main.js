@@ -1,3 +1,4 @@
+import axios from 'axios';
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 import { getListCategories, createCategories } from './js/product-filter.js';
@@ -6,6 +7,7 @@ import {
   loadFurnitureByCategory,
 } from './js/create-product-catalog-img.js';
 import {
+  ShowMessageInfo,
   ShowMessageError,
   showLoader,
   hideLoader,
@@ -24,7 +26,7 @@ import { feedbacksTemplate } from './js/renderFeedback';
 // import 'star-rating.js/css';
 import { getFurnitureById } from './js/furniture-api';
 import { modalGallery, showModal } from './js/product-modal-render-functions';
-import { closeOverlay } from './js/product-modal-evente';
+import { closeOverlay, selectedColor } from './js/product-modal-evente';
 export let firstFurnitureId;
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -191,6 +193,8 @@ new Accordion('.accordion-container', {
 // !====================================================!
 // відкриття модального вікна
 
+let color;
+let itemId;
 document.addEventListener('click', async event => {
   const buttonCatalog = event.target.closest('.furniture-catalog-btn');
   if (!buttonCatalog) return;
@@ -202,6 +206,8 @@ document.addEventListener('click', async event => {
   try {
     const product = await getFurnitureById(btnId);
     modalGallery(product);
+    color = product.color;
+    itemId = product._id;
   } catch (error) {
     ShowMessageError(message);
   } finally {
@@ -209,3 +215,72 @@ document.addEventListener('click', async event => {
   }
 });
 document.addEventListener('click', closeOverlay);
+
+// !=================================================
+
+(() => {
+  const modal = document.querySelector('[data-order]');
+
+  document.addEventListener('click', event => {
+    const openBtn = event.target.closest('.modal-button');
+    const closeBtn = event.target.closest('[data-order-close]');
+    const isBackdropClick = event.target === modal;
+
+    // відкриття
+    if (openBtn) {
+      modal.classList.add('is-open');
+      document.body.classList.add('modal--order-open');
+      return;
+    }
+
+    // закриття
+    if (closeBtn || isBackdropClick) {
+      closeModal();
+    }
+  });
+
+  // ESC
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.classList.remove('modal--order-open');
+  }
+})();
+
+// блокування сабміту при невалідній формі
+const form = document.querySelector('.modal-order-form');
+const button = document.querySelector('.modal-order-submit-btn');
+
+form.addEventListener('input', () => {
+  button.disabled = !form.checkValidity();
+});
+
+// запит POST /orders
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const { userName, phone, comment } = e.target.elements;
+  const formData = {
+    name: userName.value,
+    phone: phone.value,
+    modelId: itemId,
+    color: selectedColor,
+    comment: comment.value,
+  };
+  try {
+    const response = await axios.post(
+      'https://furniture-store-v2.b.goit.study/api/orders',
+      formData
+    );
+    const orderData = response.data;
+    const message = `Вітаю ${orderData.name}, Ви замовили ${orderData.model}, колір ${orderData.color}. Номер Вашого замовлення - ${orderData.orderNum}. Найближчим часом з Вами зв'яжеться наш менеджер для підтвердження замовлення. Дякуємо що обрали нас!`;
+    ShowMessageInfo(message);
+    e.target.reset();
+  } catch (error) {
+    ShowMessageError(error.message);
+  }
+});
