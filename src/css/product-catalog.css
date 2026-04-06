@@ -81,6 +81,7 @@
     inset 0 0 0 1px rgba(8, 12, 9, 0.05);
   background-color: rgba(8, 12, 9, 0.05);
   color: #080c09;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 100px;
   border: none;
   font-family: 'Raleway', sans-serif;
@@ -115,10 +116,11 @@
 }
 .btn-load-more {
   display: block;
-  margin: 42px auto 48px;
+  margin: 42px auto 0;
   padding: 10px 120px;
   border-radius: 100px;
   background-color: #6b0609;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow:
     0 1px 2px 0 rgba(8, 12, 9, 0.05),
     inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
@@ -135,4 +137,5 @@
   &:active {
     opacity: 0.5;
   }
+  
 }
