@@ -1,5 +1,6 @@
 import { createCatalogueFurniture } from './product-catalog-render';
 import { getAllFurniture, getFurnitureByCategory } from './api-product-catalog';
+import { showLoader, hideLoader } from './loader-notifications';
 
 const ulCataloge = document.querySelector('.furniture-catalog-list');
 const btnLoadMore = document.querySelector('.btn-load-more');
@@ -27,6 +28,7 @@ async function loadCategory(id = null) {
 
 btnLoadMore.addEventListener('click', async () => {
   page += 1;
+  showLoader();
 
   let res;
   if (!categoryID) {
@@ -36,6 +38,7 @@ btnLoadMore.addEventListener('click', async () => {
   }
 
   ulCataloge.insertAdjacentHTML('beforeend', createCatalogueFurniture(res.furnitures));
+  hideLoader();
   checkBtnStatus();
 });
 
