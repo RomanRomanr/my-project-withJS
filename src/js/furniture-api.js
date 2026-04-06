@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import 'css-star-rating/css/star-rating.css';
+import 'css-star-rating/css/star-rating.css';
 
 const furnitureApi = axios.create({
   baseURL: 'https://furniture-store-v2.b.goit.study/api',
