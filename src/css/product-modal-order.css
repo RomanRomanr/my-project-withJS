@@ -1,0 +1,188 @@
+/* Відміна скролу при відкритій модалці */
+body.modal--order-open {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Бекдроп */
+.modal-order {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-order.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Модалка */
+.modal-order-container {
+  position: relative;
+  width: 335px;
+  height: 703px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 64px 20px;
+}
+
+/* Кнопка закриття */
+.modal-order-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Заголовок */
+.modal-order-title {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #080c09;
+  margin-bottom: 48px;
+}
+
+/* Форма */
+.modal-order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Label */
+.modal-order-form-label {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #080c09;
+  gap: 8px;
+}
+
+/* Input */
+.modal-order-form-input {
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(8, 12, 9, 0.15);
+  padding: 0 12px;
+  font-size: 16px;
+  outline: none;
+  background-color: rgba(8, 12, 9, 0.05);
+}
+.modal-order-form-input:focus {
+  border: 1px solid rgba(8, 12, 9, 0.4);
+}
+.modal-order-form-input::placeholder {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(8, 12, 9, 0.6);
+}
+.modal-order-form-input:hover::placeholder {
+  color: #080c09;
+}
+
+/* Textarea */
+.modal-order-form-textarea {
+  height: 180px;
+  border-radius: 12px;
+  border: 1px solid rgba(8, 12, 9, 0.15);
+  padding: 12px;
+  resize: none;
+  font-size: 16px;
+  outline: none;
+  background-color: rgba(8, 12, 9, 0.05);
+}
+.modal-order-form-textarea:focus {
+  border: 1px solid rgba(8, 12, 9, 0.4);
+}
+
+.modal-order-form-textarea::placeholder {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(8, 12, 9, 0.6);
+}
+.modal-order-form-textarea:hover::placeholder {
+  color: #080c09;
+}
+
+/* Кнопка */
+.modal-order-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding-block: 10px;
+  padding-inline: 24px;
+  border: none;
+  border-radius: 100px;
+  background-color: #6b0609;
+  box-shadow:
+    0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.modal-order-submit-btn:hover,
+.modal-order-submit-btn:focus {
+  opacity: 0.5;
+}
+
+.modal-order-submit-btn:disabled {
+  opacity: 0.2;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-order-container {
+    width: 704px;
+    height: 671px;
+    padding: 64px 32px 32px 32px;
+  }
+  .modal-order-submit-btn {
+    align-self: center;
+    width: 196px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .modal-order-container {
+    width: 866px;
+    height: 718px;
+    padding: 64px;
+  }
+  .modal-order-title {
+    font-size: 48px;
+  }
+}
