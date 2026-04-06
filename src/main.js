@@ -192,13 +192,13 @@ new Accordion('.accordion-container', {
 // відкриття модального вікна
 
 document.addEventListener('click', async event => {
-  showLoader();
-
   const buttonCatalog = event.target.closest('.furniture-catalog-btn');
   if (!buttonCatalog) return;
 
   showModal();
+
   const btnId = buttonCatalog.dataset.imgid;
+  showLoader();
   try {
     const product = await getFurnitureById(btnId);
     modalGallery(product);
