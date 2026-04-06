@@ -1,27 +1,8 @@
 import Accordion from "accordion-js";
 import "accordion-js/dist/accordion.min.css";
-
-
-new Accordion(".accordion-container", {
-  duration: 400,
-  
-  onOpen: (el) => {
-    const icon = el.querySelector(".faq-icon");
-    icon.innerHTML = `<svg width="32" height="32">
-      <use href="../img/icons.svg#icon-chevron-up"></use>
-    </svg>`;
-  },
-
-  onClose: (el) => {
-    const icon = el.querySelector(".faq-icon");
-    icon.innerHTML = `<svg width="32" height="32">
-      <use href="../img/icons.svg#icon-chevron-down"></use>
-    </svg>`;
-  }
-});
 import { getListCategories, createCategories } from "./js/product-filter.js";
 import { loadAllCategories, loadFurnitureByCategory } from "./js/create-product-catalog-img.js";
-import { ShowMessageError, ShowMessageInfo, showLoader, hideLoader} from "./js/loader-notifications";
+import { ShowMessageError, showLoader, hideLoader} from "./js/loader-notifications";
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -30,9 +11,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 // Описаний у документації
-import iziToast from 'izitoast';
-// Додатковий імпорт стилів
-import 'izitoast/dist/css/iziToast.min.css';
 import { getFeedbacks } from './js/feedbackApi';
 import { feedbacksTemplate } from './js/renderFeedback';
 
@@ -192,3 +170,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+// for FAQ 
+// !====================================================!
+
+new Accordion('.accordion-container', {
+  duration: 400,
+
+  onOpen: el => {
+    const icon = el.querySelector('.faq-icon');
+    icon.innerHTML = `<svg width="32" height="32">
+      <use href="../img/icons.svg#icon-chevron-up"></use>
+    </svg>`;
+  },
+
+  onClose: el => {
+    const icon = el.querySelector('.faq-icon');
+    icon.innerHTML = `<svg width="32" height="32">
+      <use href="../img/icons.svg#icon-chevron-down"></use>
+    </svg>`;
+  },
+});

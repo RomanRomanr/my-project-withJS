@@ -12,14 +12,6 @@ export function hideLoader(){
     overlay.classList.add("hidden");
 }
 
-export function ShowMessageInfo(message) {
-    iziToast.info({
-        title: 'Увага!',
-        message: message,
-        position: 'topRight'
-    });
-}
-
 export function ShowMessageError(message) {
     iziToast.error({
         title: 'Увага! Виникла помилка',
