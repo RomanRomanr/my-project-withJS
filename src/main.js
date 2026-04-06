@@ -3,6 +3,25 @@ import { loadAllCategories, loadFurnitureByCategory } from "./js/create-product-
 import { ShowMessageError, ShowMessageInfo, showLoader, hideLoader} from "./js/loader-notifications";
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", async () => {
   const categoriesContainer = document.querySelector(".list-categories");
 
@@ -111,3 +130,7 @@ btnLoadMore.addEventListener('click', loadMore);
     document.body.classList.remove('menu-open');
   }
 })();
+
+
+// for feedback (testimonial)
+// !====================================================!
