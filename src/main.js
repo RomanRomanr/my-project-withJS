@@ -199,8 +199,13 @@ document.addEventListener('click', async event => {
 
   showModal();
   const btnId = buttonCatalog.dataset.imgid;
-  const product = await getFurnitureById(btnId);
-
-  modalGallery(product);
+  try {
+    const product = await getFurnitureById(btnId);
+    modalGallery(product);
+  } catch (error) {
+    ShowMessageError(message);
+  } finally {
+    hideLoader();
+  }
 });
 document.addEventListener('click', closeOverlay);
