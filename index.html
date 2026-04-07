@@ -35,10 +35,10 @@
           <a class="header-nav-link" href="#FAQ">Часті питання</a>
         </li>
         <li class="header-nav-item">
-          <a class="header-nav-link" href="#">Відгуки</a>
+          <a class="header-nav-link" href="#testimonial">Відгуки</a>
         </li>
         <li class="header-nav-item">
-          <a class="header-nav-link" href="#product">До покупок</a>
+          <a class="header-nav-link" href="#catalog">До покупок</a>
         </li>
       </ul>
     </nav>
@@ -103,7 +103,7 @@
 </main>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css">
 <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
-      <section class="container categories-container">
+      <section id="product" class="container categories-container">
   <div class="div-list-categories">
     <h2 class="hh-categories">Наші меблі</h2>
     <h3 class="hhh-categories">
@@ -111,13 +111,13 @@
     </h3>
     <ul class="list-categories"></ul>
   </div>
-  <div class="furniture-catalog-wrapper">
+  <div id="catalog" class="furniture-catalog-wrapper">
     <ul class="furniture-catalog-list"></ul>
   </div>
   <button class="btn-load-more" type="button">Показати ще</button>
 </section>
 
-      <section class="container about-us-box">
+      <section id="about-us" class="container about-us-box">
   <div class="box-for-text child">
       <h2 class="about-us-title">Про Меблерію</h2>
       <p class="about-us-text">
@@ -146,7 +146,7 @@
 </section>
 
       
-      <section class="faq-section container">
+      <section id="FAQ" class="faq-section container">
   <div class="faq-wrapper">
     <h2 class="section-title">Часті питання</h2>
     <ul class="faq-list accordion-container">
@@ -239,7 +239,7 @@
   </div>
 </section>
 
-      <section class="sec-feedbacks">
+      <section id="testimonial" class="sec-feedbacks">
   <div class="container">
     <div class="wrap-content">
       <h2 class="title-feedback">Відгуки клієнтів</h2>
@@ -320,7 +320,7 @@
     </div>
   </div>
 </footer>
-    <div class="modal">
+    <div class="modal hidden">
   <div class="modal-overlay"></div>
   <div class="modal-window"></div>
 </div>
