@@ -149,14 +149,6 @@ body {
 }
 
 
-.modal-rating {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-
 .modal-label {
     margin: 0 0 12px;
     font-size: 16px;
@@ -193,8 +185,9 @@ body {
 }
 
 .modal-color--selected {
-    border-color: #848584;
-    box-shadow: 0 0 0 4px #848584;
+    border-color: #6a6b6a;
+    box-shadow: inset 0 0 0 4px #6a6b6a;
+   
 }
 
 
@@ -243,43 +236,19 @@ body {
         inset 0 2px 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-.modal-rating {
-    --gl-star-color: #090B09;
-    --gl-star-color-inactive: transparent;
-    --gl-star-size: 24px;
+.rating{
+    display: flex !important;
+    justify-content: flex-start !important;
+    margin-left: 0 !important;
+    margin-bottom: 24px !important;
 }
 
-.modal-rating [data-star-rating] {
-    justify-content: flex-start;
+.star {
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: 4px !important;
 }
 
-.modal-rating .gl-star-rating--stars {
-    gap: 4px;
-}
-
-.modal-rating .gl-star-rating--stars > span {
-    width: 24px;
-    height: 24px;
-}
-
-.modal-rating .gl-star-rating--stars > span svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.modal-rating .gl-star-full {
-    fill: transparent;
-    stroke: #090B09;
-    stroke-width: 1.25;
-    stroke-linejoin: round;
-}
-
-.modal-rating .gl-active .gl-star-full,
-.modal-rating .gl-selected .gl-star-full {
-    fill: #090B09;
-    stroke: #090B09;
-}
 
 
 @media (min-width: 768px) {
@@ -399,8 +368,10 @@ body {
     }
 
     .modal-info {
-        width: 330px;
+        width: 100%;
         padding-left: 24px;
+        height: 508px;
+        justify-content: space-between;
     }
 
     .modal-title {
