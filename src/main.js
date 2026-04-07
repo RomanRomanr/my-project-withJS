@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Inputmask from 'inputmask';
 import Accordion from 'accordion-js';
+import spriteUrl from '../img/icons.svg';
 import 'accordion-js/dist/accordion.min.css';
 import { getListCategories, createCategories } from './js/product-filter.js';
 import {
@@ -182,14 +183,14 @@ new Accordion('.accordion-container', {
   onOpen: el => {
     const icon = el.querySelector('.faq-icon');
     icon.innerHTML = `<svg width="32" height="32">
-      <use href="/img/icons.svg#icon-chevron-up"></use>
+      <use href="${spriteUrl}#icon-chevron-up"></use>
     </svg>`;
   },
 
   onClose: el => {
     const icon = el.querySelector('.faq-icon');
     icon.innerHTML = `<svg width="32" height="32">
-      <use href="/img/icons.svg#icon-chevron-down"></use>
+      <use href="${spriteUrl}#icon-chevron-down"></use>
     </svg>`;
   },
 });
