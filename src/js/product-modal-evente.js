@@ -10,6 +10,7 @@ export function closeOverlay(event) {
 
   if (closeButton || overlay) {
     hideModal();
+    document.body.classList.remove('modal--order-open');
     return;
   }
 
@@ -43,6 +44,7 @@ export function closeOverlay(event) {
 
     if (productId) {
       hideModal();
+      document.body.classList.remove('modal--order-open');
       document.dispatchEvent(
         new CustomEvent('product-order-click', {
           detail: dataColorId,
@@ -58,5 +60,6 @@ export function closeOverlay(event) {
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
     hideModal();
+    document.body.classList.remove('modal--order-open');
   }
 });
