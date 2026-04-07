@@ -115,6 +115,7 @@
   font-family: 'Raleway', sans-serif;
 }
 .btn-load-more {
+  white-space: nowrap;
   display: block;
   margin: 42px auto 0;
   padding: 10px 120px;
