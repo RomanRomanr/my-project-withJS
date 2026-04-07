@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Inputmask from 'inputmask';
 import Accordion from 'accordion-js';
-import spriteUrl from '../img/icons.svg';
+import spriteUrl from '/img/icons.svg';
 import 'accordion-js/dist/accordion.min.css';
 import { getListCategories, createCategories } from './js/product-filter.js';
 import {
