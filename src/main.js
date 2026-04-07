@@ -177,14 +177,14 @@ new Accordion('.accordion-container', {
   onOpen: el => {
     const icon = el.querySelector('.faq-icon');
     icon.innerHTML = `<svg width="32" height="32">
-      <use href="../img/icons.svg#icon-chevron-up"></use>
+      <use href="/img/icons.svg#icon-chevron-up"></use>
     </svg>`;
   },
 
   onClose: el => {
     const icon = el.querySelector('.faq-icon');
     icon.innerHTML = `<svg width="32" height="32">
-      <use href="../img/icons.svg#icon-chevron-down"></use>
+      <use href="/img/icons.svg#icon-chevron-down"></use>
     </svg>`;
   },
 });
