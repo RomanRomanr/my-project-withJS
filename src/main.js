@@ -22,8 +22,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 // Описаний у документації
-import { getFeedbacks } from './js/feedbackApi';
-import { feedbacksTemplate } from './js/renderFeedback';
+import { getFeedbacks } from './js/feedback_api';
+import { feedbacksTemplate } from './js/render_feedback';
 
 // import 'star-rating.js/css';
 import { getFurnitureById } from './js/furniture-api';
