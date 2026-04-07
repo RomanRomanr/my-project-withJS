@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Inputmask from 'inputmask';
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 import { getListCategories, createCategories } from './js/product-filter.js';
@@ -293,3 +294,13 @@ form.addEventListener('submit', async e => {
     ShowMessageError(error.message);
   }
 });
+
+// Валідація номеру телефону
+// !=================================================
+
+const phoneInput = document.querySelector('input[name="phone"]');
+Inputmask({
+  mask: '380999999999', 
+  showMaskOnHover: false, // не показує маску при наведенні
+  showMaskOnFocus: true, // показує маску при фокусі
+}).mask(phoneInput);
