@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Inputmask from 'inputmask';
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 import { getListCategories, createCategories } from './js/product-filter.js';
@@ -25,7 +26,11 @@ import { feedbacksTemplate } from './js/renderFeedback';
 
 // import 'star-rating.js/css';
 import { getFurnitureById } from './js/furniture-api';
-import { modalGallery, showModal } from './js/product-modal-render-functions';
+import {
+  modalGallery,
+  showModal,
+  hideModal,
+} from './js/product-modal-render-functions';
 import { closeOverlay, selectedColor } from './js/product-modal-evente';
 export let firstFurnitureId;
 
@@ -177,14 +182,14 @@ new Accordion('.accordion-container', {
   onOpen: el => {
     const icon = el.querySelector('.faq-icon');
     icon.innerHTML = `<svg width="32" height="32">
-      <use href="../img/icons.svg#icon-chevron-up"></use>
+      <use href="/img/icons.svg#icon-chevron-up"></use>
     </svg>`;
   },
 
   onClose: el => {
     const icon = el.querySelector('.faq-icon');
     icon.innerHTML = `<svg width="32" height="32">
-      <use href="../img/icons.svg#icon-chevron-down"></use>
+      <use href="/img/icons.svg#icon-chevron-down"></use>
     </svg>`;
   },
 });
@@ -206,6 +211,7 @@ document.addEventListener('click', async event => {
   try {
     const product = await getFurnitureById(btnId);
     modalGallery(product);
+    document.body.classList.add('modal--order-open');
     color = product.color;
     itemId = product._id;
   } catch (error) {
@@ -218,9 +224,8 @@ document.addEventListener('click', closeOverlay);
 
 // !=================================================
 
+const modal = document.querySelector('[data-order]');
 (() => {
-  const modal = document.querySelector('[data-order]');
-
   document.addEventListener('click', event => {
     const openBtn = event.target.closest('.modal-button');
     const closeBtn = event.target.closest('[data-order-close]');
@@ -228,8 +233,10 @@ document.addEventListener('click', closeOverlay);
 
     // відкриття
     if (openBtn) {
+      hideModal();
       modal.classList.add('is-open');
       document.body.classList.add('modal--order-open');
+
       return;
     }
 
@@ -245,12 +252,12 @@ document.addEventListener('click', closeOverlay);
       closeModal();
     }
   });
-
-  function closeModal() {
-    modal.classList.remove('is-open');
-    document.body.classList.remove('modal--order-open');
-  }
 })();
+
+function closeModal() {
+  modal.classList.remove('is-open');
+  document.body.classList.remove('modal--order-open');
+}
 
 // блокування сабміту при невалідній формі
 const form = document.querySelector('.modal-order-form');
@@ -264,12 +271,14 @@ form.addEventListener('input', () => {
 form.addEventListener('submit', async e => {
   e.preventDefault();
   const { userName, phone, comment } = e.target.elements;
+  const textarea = comment.value || 'Без коментарів';
+
   const formData = {
     name: userName.value,
     phone: phone.value,
     modelId: itemId,
     color: selectedColor,
-    comment: comment.value,
+    comment: textarea,
   };
   try {
     const response = await axios.post(
@@ -280,7 +289,18 @@ form.addEventListener('submit', async e => {
     const message = `Вітаю ${orderData.name}, Ви замовили ${orderData.model}, колір ${orderData.color}. Номер Вашого замовлення - ${orderData.orderNum}. Найближчим часом з Вами зв'яжеться наш менеджер для підтвердження замовлення. Дякуємо що обрали нас!`;
     ShowMessageInfo(message);
     e.target.reset();
+    closeModal();
   } catch (error) {
     ShowMessageError(error.message);
   }
 });
+
+// Валідація номеру телефону
+// !=================================================
+
+const phoneInput = document.querySelector('input[name="phone"]');
+Inputmask({
+  mask: '380999999999', 
+  showMaskOnHover: false, // не показує маску при наведенні
+  showMaskOnFocus: true, // показує маску при фокусі
+}).mask(phoneInput);
