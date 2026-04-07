@@ -208,7 +208,7 @@ body.menu-open::before {
     height: auto;
   }
   .mobile-menu-container {
-    min-width: none;
+    min-width: 0;
     max-width: 249px;
     margin: 0;
     padding-top: 96px;
