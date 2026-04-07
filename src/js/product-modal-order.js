@@ -64,8 +64,8 @@ form.addEventListener('submit', async e => {
   const formData = {
     name: userName.value,
     phone: phone.value,
-    modelId: '',
-    color: '',
+    modelId: product._id,
+    color: product.color,
     comment: comment.value,
   };
   try {

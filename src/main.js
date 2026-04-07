@@ -1,8 +1,17 @@
-import Accordion from "accordion-js";
-import "accordion-js/dist/accordion.min.css";
-import { getListCategories, createCategories } from "./js/product-filter.js";
-import { loadAllCategories, loadFurnitureByCategory } from "./js/create-product-catalog-img.js";
-import { ShowMessageError, showLoader, hideLoader} from "./js/loader-notifications";
+import axios from 'axios';
+import Accordion from 'accordion-js';
+import 'accordion-js/dist/accordion.min.css';
+import { getListCategories, createCategories } from './js/product-filter.js';
+import {
+  loadAllCategories,
+  loadFurnitureByCategory,
+} from './js/create-product-catalog-img.js';
+import {
+  ShowMessageInfo,
+  ShowMessageError,
+  showLoader,
+  hideLoader,
+} from './js/loader-notifications';
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -15,14 +24,17 @@ import { getFeedbacks } from './js/feedbackApi';
 import { feedbacksTemplate } from './js/renderFeedback';
 
 // import 'star-rating.js/css';
-import { getCategories, getFurnitureById, getFurnitures } from './js/furniture-api';
-import { modalGallery, showModal } from './js/product-modal-render-functions';
+import { getFurnitureById } from './js/furniture-api';
+import {
+  modalGallery,
+  showModal,
+  hideModal,
+} from './js/product-modal-render-functions';
+import { closeOverlay, selectedColor } from './js/product-modal-evente';
 export let firstFurnitureId;
 
-
-
-document.addEventListener("DOMContentLoaded", async () => {
-  const categoriesContainer = document.querySelector(".list-categories");
+document.addEventListener('DOMContentLoaded', async () => {
+  const categoriesContainer = document.querySelector('.list-categories');
 
   try {
     // Завантажуємо категорії з API
@@ -72,10 +84,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 // btnLoadMore.addEventListener('click', loadMore);
 
-
-
-
-
 // header JS block
 // =====================================================
 
@@ -119,8 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('menu-open');
   }
 });
-
-
 
 // for feedback (testimonial)
 // !====================================================!
@@ -166,7 +172,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// for FAQ 
+// for FAQ
 // !====================================================!
 
 new Accordion('.accordion-container', {
@@ -189,34 +195,101 @@ new Accordion('.accordion-container', {
 
 // for product modal
 // !====================================================!
+// відкриття модального вікна
 
-async function testFurnitureApi() {
+let color;
+let itemId;
+document.addEventListener('click', async event => {
+  const buttonCatalog = event.target.closest('.furniture-catalog-btn');
+  if (!buttonCatalog) return;
+
+  showModal();
+
+  const btnId = buttonCatalog.dataset.imgid;
+  showLoader();
   try {
-    const [furnituresResponse, categories] = await Promise.all([
-      getFurnitures(),
-      getCategories(),
-    ]);
+    const product = await getFurnitureById(btnId);
+    modalGallery(product);
+    document.body.classList.add('modal--order-open');
+    color = product.color;
+    itemId = product._id;
+  } catch (error) {
+    ShowMessageError(message);
+  } finally {
+    hideLoader();
+  }
+});
+document.addEventListener('click', closeOverlay);
 
-    const furnitures = furnituresResponse.furnitures ?? [];
+// !=================================================
 
-    console.log('Список товарів:', furnitures);
-    console.log('Категорії:', categories);
+const modal = document.querySelector('[data-order]');
+(() => {
+  document.addEventListener('click', event => {
+    const openBtn = event.target.closest('.modal-button');
+    const closeBtn = event.target.closest('[data-order-close]');
+    const isBackdropClick = event.target === modal;
 
-    if (furnitures.length === 0) {
-      console.log('API повернув порожній список товарів.');
+    // відкриття
+    if (openBtn) {
+      hideModal();
+      modal.classList.add('is-open');
+      document.body.classList.add('modal--order-open');
+
       return;
     }
 
-    firstFurnitureId = furnitures[5]._id;
-    const product = await getFurnitureById(firstFurnitureId);
+    // закриття
+    if (closeBtn || isBackdropClick) {
+      closeModal();
+    }
+  });
 
-    console.log('Деталі першого товару:', product);
+  // ESC
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+})();
 
-    modalGallery(product);
-    showModal();
-  } catch (error) {
-    console.error('Помилка перевірки API меблів:', error);
-  }
+function closeModal() {
+  modal.classList.remove('is-open');
+  document.body.classList.remove('modal--order-open');
 }
 
-testFurnitureApi();
+// блокування сабміту при невалідній формі
+const form = document.querySelector('.modal-order-form');
+const button = document.querySelector('.modal-order-submit-btn');
+
+form.addEventListener('input', () => {
+  button.disabled = !form.checkValidity();
+});
+
+// запит POST /orders
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const { userName, phone, comment } = e.target.elements;
+  const textarea = comment.value || 'Без коментарів';
+
+  const formData = {
+    name: userName.value,
+    phone: phone.value,
+    modelId: itemId,
+    color: selectedColor,
+    comment: textarea,
+  };
+  try {
+    const response = await axios.post(
+      'https://furniture-store-v2.b.goit.study/api/orders',
+      formData
+    );
+    const orderData = response.data;
+    const message = `Вітаю ${orderData.name}, Ви замовили ${orderData.model}, колір ${orderData.color}. Номер Вашого замовлення - ${orderData.orderNum}. Найближчим часом з Вами зв'яжеться наш менеджер для підтвердження замовлення. Дякуємо що обрали нас!`;
+    ShowMessageInfo(message);
+    e.target.reset();
+    closeModal();
+  } catch (error) {
+    ShowMessageError(error.message);
+  }
+});

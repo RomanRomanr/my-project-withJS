@@ -1,21 +1,30 @@
-import iziToast from "izitoast";
-import 'izitoast/dist/css/iziToast.min.css'
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
-const loader = document.querySelector(".loader");
+const loader = document.querySelector('.loader');
 const overlay = document.querySelector('.loader-overlay');
 export function showLoader() {
-    overlay.classList.remove("hidden");
-    loader.classList.add("show");
+  overlay.classList.remove('hidden');
+  loader.classList.add('show');
 }
-export function hideLoader(){
-    loader.classList.remove("show");
-    overlay.classList.add("hidden");
+export function hideLoader() {
+  loader.classList.remove('show');
+  overlay.classList.add('hidden');
 }
 
 export function ShowMessageError(message) {
-    iziToast.error({
-        title: 'Увага! Виникла помилка',
-        message: message,
-        position: 'topRight'
-    });
+  iziToast.error({
+    title: 'Увага! Виникла помилка',
+    message: message,
+    position: 'topRight',
+  });
+}
+export function ShowMessageInfo(message) {
+  iziToast.success({
+    title: 'ЗАМОВЛЕННЯ УСПІШНО СФОРМОВАНО',
+    message: message,
+    position: 'center',
+    messageSize: 16,
+    maxWidth: 900,
+  });
 }

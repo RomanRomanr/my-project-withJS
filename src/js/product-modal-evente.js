@@ -1,17 +1,16 @@
 import 'css-star-rating/css/star-rating.css';
-import { getFurnitureById } from './furniture-api';
-import {
-  hideModal,
-  modalGallery,
-  showModal,
-} from './product-modal-render-functions';
+
+import { hideModal } from './product-modal-render-functions';
+
 export let selectedColor;
-document.addEventListener('click', async event => {
+
+export function closeOverlay(event) {
   const closeButton = event.target.closest('.modal-close');
   const overlay = event.target.classList.contains('modal-overlay');
 
   if (closeButton || overlay) {
     hideModal();
+    document.body.classList.remove('modal--order-open');
     return;
   }
 
@@ -45,6 +44,7 @@ document.addEventListener('click', async event => {
 
     if (productId) {
       hideModal();
+      document.body.classList.remove('modal--order-open');
       document.dispatchEvent(
         new CustomEvent('product-order-click', {
           detail: dataColorId,
@@ -54,35 +54,12 @@ document.addEventListener('click', async event => {
     }
 
     return;
-    //   як отримати id  в іншому місці
-    //   document.addEventListener('product-order-click', event => {
-    //   console.log(event.detail.productId);
-    // });
   }
-
-  const productTrigger = event.target.closest('[data-product-id]');
-
-  if (!productTrigger) {
-    return;
-  }
-
-  const { productId } = productTrigger.dataset;
-
-  if (!productId) {
-    return;
-  }
-
-  try {
-    const product = await getFurnitureById(productId);
-    modalGallery(product);
-    showModal();
-  } catch (error) {
-    console.error('Не вдалося завантажити товар для модалки:', error);
-  }
-});
+}
 
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
     hideModal();
+    document.body.classList.remove('modal--order-open');
   }
 });
