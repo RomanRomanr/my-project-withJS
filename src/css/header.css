@@ -46,6 +46,7 @@ body.menu-open {
 
 @media screen and (min-width: 768px) {
   .header-container {
+    position: relative;
     padding: 0 32px;
   }
 }
@@ -205,9 +206,10 @@ body.menu-open::before {
 
 @media screen and (min-width: 768px) {
   .mobile-menu {
+    position: absolute;
     left: 500px;
     min-width: 249px;
-    width: 100%;
+    width: fit-content;
     height: auto;
   }
   .mobile-menu-container {
