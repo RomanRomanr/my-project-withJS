@@ -1,11 +1,9 @@
-
 * {
   box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
 }
-
 
 body {
   display: flex;
@@ -20,42 +18,37 @@ main:has(.back-link) {
   text-align: center;
 }
 
-
 @font-face {
-    font-family: 'IBM Plex Sans';
-    src: url('../fonts/IBMPlexSans-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+  font-family: 'IBM Plex Sans';
+  src: url('../fonts/IBMPlexSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
 
-
 @font-face {
-    font-family: 'Raleway';
-    src: url('../fonts/Raleway-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-
 @font-face {
-    font-family: 'Raleway';
-    src: url('../fonts/Raleway-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
 }
 
-
 @font-face {
-    font-family: 'Raleway';
-    src: url('../fonts/Raleway-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
 }
 
-
 @font-face {
-    font-family: 'Raleway';
-    src: url('../fonts/Raleway-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
