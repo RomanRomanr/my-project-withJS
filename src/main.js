@@ -306,6 +306,7 @@ form.addEventListener('submit', async e => {
 const phoneInput = document.querySelector('input[name="phone"]');
 Inputmask({
   mask: '380999999999',
-  showMaskOnHover: false, // не показує маску при наведенні
-  showMaskOnFocus: true, // показує маску при фокусі
+  showMaskOnHover: false, 
+  showMaskOnFocus: true, 
 }).mask(phoneInput);
+console.log(phoneInput);
