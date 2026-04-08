@@ -213,12 +213,23 @@ body.menu-open::before {
     height: auto;
   }
   .mobile-menu-container {
+    position: relative;
     min-width: 0;
     max-width: 249px;
     margin: 0;
     padding-top: 96px;
     padding-inline: 32px;
     padding-bottom: 24px;
+  }
+  .mobile-menu-container::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 230px;
+    width: 400px;
+    height: 405px;
+    background-color: #fff;
+
   }
   .menu-logo {
     display: none;
