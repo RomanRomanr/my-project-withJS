@@ -213,7 +213,7 @@ body.menu-open::before {
     height: auto;
   }
   .mobile-menu-container {
-    position: relative;
+    /* position: relative; */
     min-width: 0;
     max-width: 249px;
     margin: 0;
@@ -221,7 +221,7 @@ body.menu-open::before {
     padding-inline: 32px;
     padding-bottom: 24px;
   }
-  .mobile-menu-container::after{
+  /* .mobile-menu-container::after{
     content: '';
     position: absolute;
     top: 0;
@@ -230,7 +230,7 @@ body.menu-open::before {
     height: 405px;
     background-color: #fff;
 
-  }
+  } */
   .menu-logo {
     display: none;
   }
