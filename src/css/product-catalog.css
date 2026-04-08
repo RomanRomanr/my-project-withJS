@@ -17,6 +17,7 @@
   }
 }
 .furniture-catalog-items {
+  width: 100%;
   max-width: 335px;
 }
 @media screen and (min-width: 768px) {
@@ -74,7 +75,8 @@
 .furniture-catalog-btn {
   display: block;
   margin: 0 auto;
-  padding: 10px 121px;
+  padding: 10px 0;
+  width: 100%;
   box-shadow:
     0 1px 2px 0 rgba(8, 12, 9, 0.05),
     inset 0 -2px 1px 0 rgba(8, 12, 9, 0.05),
@@ -94,18 +96,6 @@
     opacity: 0.5;
   }
 }
-
-@media screen and (min-width: 768px) {
-  .furniture-catalog-btn {
-    padding: 10px 124px;
-  }
-
-  @media screen and (min-width: 1440px) {
-    .furniture-catalog-btn {
-      padding: 10px 109px;
-    }
-  }
-}
 .furniture-catalog-price {
   margin-bottom: 16px;
   font-size: 20px;
@@ -118,7 +108,9 @@
   white-space: nowrap;
   display: block;
   margin: 42px auto 0;
-  padding: 10px 120px;
+  width: 100%;
+  max-width: 340px;
+  padding: 10px 0;
   border-radius: 100px;
   background-color: #6b0609;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -138,5 +130,4 @@
   &:active {
     opacity: 0.5;
   }
-  
 }

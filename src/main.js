@@ -16,7 +16,7 @@ import {
 } from './js/loader-notifications';
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Keyboard } from 'swiper/modules';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     refs.listElems.innerHTML = markup;
     const swiper = new Swiper('.swiper', {
       // configure Swiper to use modules
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination, Keyboard],
       slidesPerView: 1,
       breakpoints: {
         768: {
@@ -157,6 +157,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           slidesPerView: 3,
           spaceBetween: 24,
         },
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: false,
       },
       pagination: {
         el: '.swiper-pagination',
@@ -301,7 +305,7 @@ form.addEventListener('submit', async e => {
 
 const phoneInput = document.querySelector('input[name="phone"]');
 Inputmask({
-  mask: '380999999999', 
+  mask: '380999999999',
   showMaskOnHover: false, // не показує маску при наведенні
   showMaskOnFocus: true, // показує маску при фокусі
 }).mask(phoneInput);
