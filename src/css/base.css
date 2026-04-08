@@ -59,9 +59,3 @@ main:has(.back-link) {
     font-weight: 700;
     font-style: normal;
 }
-.star.small {
-  height: 9.5px !important;
-}
-.rating.immediately .star-container {
-  transition: none !important;
-}
