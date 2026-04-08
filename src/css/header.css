@@ -38,17 +38,24 @@ body.menu-open {
   border: none;
   background-color: transparent;
 }
+
 .icon-burger {
   display: block;
   width: 32px;
   height: 32px;
 }
 
+@media only screen and (max-width: 767px){
+.mobile-menu{
+  left: 0;
+}
+}
 @media screen and (min-width: 768px) {
   .header-container {
-    position: relative;
+    /* position: relative; */
     padding: 0 32px;
   }
+  
 }
 
 @media screen and (min-width: 1440px) {
@@ -113,7 +120,7 @@ body.menu-open::before {
   z-index: 999;
   position: fixed;
   top: 0;
-  left: 0;
+  /* left: 0; */
   width: 100%;
   height: 100%;
   background-color: #fff;
@@ -207,10 +214,12 @@ body.menu-open::before {
 @media screen and (min-width: 768px) {
   .mobile-menu {
     position: absolute;
-    left: 500px;
+    /* left: 500px; */
     min-width: 249px;
     width: fit-content;
     height: auto;
+    right: 0;
+    padding-right: calc(50% - 368px);
   }
   .mobile-menu-container {
     /* position: relative; */
