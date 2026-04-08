@@ -35,14 +35,16 @@
 .btn-hero {
   background: #6b0609;
   align-items: center;
-  font-family: "Raleway", sans-serif;
-font-weight: 500;
-font-size: 16px;
-line-height: 1.6;
-color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
   border: none;
   border-radius: 100px;
-  padding: 10px 24px;
+  max-width: 365px;
+  width: 100%;
+  padding: 10px 0;
   width: auto;
   height: 46px;
   cursor: pointer;
@@ -101,15 +103,16 @@ color: #fff;
 }
 
 @media screen and (min-width: 768px) {
-  .hero {padding-top: 79px;
-  padding-bottom: 80px;
+  .hero {
+    padding-top: 79px;
+    padding-bottom: 80px;
   }
 
   .container-column {
     max-width: 560px;
     min-height: 237px;
   }
-  
+
   .btn-hero {
     width: 209px;
     height: 46px;
@@ -127,6 +130,3 @@ color: #fff;
     font-size: 56px;
   }
 }
-
-
-
