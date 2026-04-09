@@ -43,9 +43,7 @@
   .img-box-about {
     max-width: 704px;
   }
-  .about-us-wrapper {
-    /* padding: 32px 0; */
-  }
+  
 }
 @media screen and (min-width: 1440px) {
   .about-us-box{
