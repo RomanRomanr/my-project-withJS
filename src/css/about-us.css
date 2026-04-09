@@ -1,11 +1,12 @@
 .about-us-box {
   background-color: #f0e6e6;
+  padding: 64px 0;
 }
 .about-us-wrapper {
   display: flex;
   gap: 24px;
   flex-direction: column;
-  padding: 64px 0;
+  /* padding: 64px 0; */
 }
 
 .box-for-text {
@@ -36,14 +37,20 @@
   border-radius: 8px;
 }
 @media screen and (min-width: 768px) {
+  .about-us-box{
+    padding: 32px 0;
+  }
   .img-box-about {
     max-width: 704px;
   }
   .about-us-wrapper {
-    padding: 32px 0;
+    /* padding: 32px 0; */
   }
 }
 @media screen and (min-width: 1440px) {
+  .about-us-box{
+    padding: 64px 0;
+  }
   .about-us-wrapper {
     flex-direction: row;
   }
