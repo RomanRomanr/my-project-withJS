@@ -9,6 +9,7 @@
   .furniture-catalog-list {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: start;
   }
 }
 @media screen and (min-width: 1440px) {
