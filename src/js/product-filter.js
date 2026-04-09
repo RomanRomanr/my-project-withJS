@@ -1,7 +1,7 @@
 // отримання категорій з API
-import axios from "axios";
+import axios from 'axios';
 
-const BASE_URL = "https://furniture-store-v2.b.goit.study/api";
+const BASE_URL = 'https://furniture-store-v2.b.goit.study/api';
 
 export async function getListCategories() {
   const response = await axios.get(`${BASE_URL}/categories`);
@@ -10,7 +10,7 @@ export async function getListCategories() {
 
 // створення категорій на сторінці
 export function createCategories(categories) {
-  const container = document.querySelector(".list-categories");
+  const container = document.querySelector('.list-categories');
   if (!container) return;
 
   const markup = categories
@@ -21,11 +21,7 @@ export function createCategories(categories) {
         </li>
       `
     )
-    .join("");
+    .join('');
 
   container.innerHTML = markup;
 }
-
-
-
-
