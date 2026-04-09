@@ -52,7 +52,7 @@
   }
 }
 .furniture-catalog-title {
-  min-height: 58px;
+  /* min-height: 58px; */
   margin-bottom: 8px;
   font-size: 18px;
   font-weight: 600;
