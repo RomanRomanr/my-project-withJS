@@ -316,4 +316,3 @@ Inputmask({
   showMaskOnHover: false,
   showMaskOnFocus: true,
 }).mask(phoneInput);
-console.log(phoneInput);
