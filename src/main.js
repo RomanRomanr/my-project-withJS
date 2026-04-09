@@ -113,6 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  refs.modal.addEventListener('click', e => {
+    if (!e.target.closest('.menu-nav-item')) {
+      return;
+    }
+    closeMenu();
+  });
+
   function toggleModal() {
     const isOpen = refs.modal.classList.toggle('is-open');
     document.body.classList.toggle('menu-open', isOpen);
@@ -306,7 +313,7 @@ form.addEventListener('submit', async e => {
 const phoneInput = document.querySelector('input[name="phone"]');
 Inputmask({
   mask: '380999999999',
-  showMaskOnHover: false, 
-  showMaskOnFocus: true, 
+  showMaskOnHover: false,
+  showMaskOnFocus: true,
 }).mask(phoneInput);
 console.log(phoneInput);
